@@ -1,2 +1,3 @@
 # Flappy-Wumpus
-We never started this project.
+A dead game about a dead meme.
+By A Generic Gamer
