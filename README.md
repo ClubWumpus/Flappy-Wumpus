@@ -1,2 +1,4 @@
 # Flappy-Wumpus
-We never started this project.
+A bad game about a dead meme.
+
+[By A Generic Gamer](https://twitter.com/SlightlyGeneric).
