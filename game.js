@@ -1,7 +1,7 @@
 /*
 ┏-----------------------------------------------┓
 |               Flappy Wumpus                   |
-|           By A Generic Gamer                  |
+|             By A Generic Gamer                |
 | Adapted from Goma Games Workshop: Flappy Flap |
 |  By using this code you acknowledge and agree |
 |      to the license in the master branch      |
@@ -19,7 +19,7 @@ game.distance = 0; // initial value, don't change
 game.gravity = 0.1;
 game.flap_strength = 3.0;
 game.fly_speed = 2;
-game.obstacle_frequency = 300;
+game.obstacle_frequency = 350;
 
 
 var obstacles = new Group();
@@ -46,6 +46,8 @@ game.preload('assets/ground.png');
 game.preload('assets/instructions.png');
 game.preload('assets/obstacle_top.png');
 game.preload('assets/obstacle_bottom.png');
+game.preload('sounds/FlappilyWumped.mp3');
+game.preload('sounds/flap.mp3');
 
 // initialize game
 game.onload = function(){
@@ -87,6 +89,7 @@ game.onload = function(){
   game.avatar.x = 100;
   game.avatar.y = 100;
   game.avatar.ySpeed = 0;
+  
 
   // add game.avatar to rootScene
 	game.rootScene.addChild(game.avatar);
@@ -107,7 +110,7 @@ game.onload = function(){
 function game_touched(){
   if(game.started){
     
-    // #7 flap
+    // flap
     game.avatar.ySpeed = -game.flap_strength;
 
   }else{
@@ -135,12 +138,12 @@ game.onenterframe = function(){
        game.avatar.y < 0
     ){
 
-      // #13 end the game if avatar touches floor or ceiling
+      // end the game if avatar touches floor or ceiling
       gameover();
 
     }
 
-    // #10 move obstacles to the left
+    // move obstacles to the left
     obstacles.x -= game.fly_speed;
 
     // track flying progress
@@ -164,7 +167,7 @@ game.onenterframe = function(){
     for (var i = 0; i < obstacles.childNodes.length; i++) {
       if(game.avatar.intersect(obstacles.childNodes[i])){
 
-        // #12 end the game if player hits obstacle
+        // end the game if player hits obstacle
         gameover();
 
       }else if( // check for score
