@@ -1,7 +1,7 @@
 <!--
 ┏-----------------------------------------------┓
 |                 Flappy Wumpus                 |
-|              By A Generic Gamer               |
+|               By A Generic Gamer              |
 | Adapted from Goma Games Workshop: Flappy Flap |
 |  By using this code you acknowledge and agree |
 |      to the license in the master branch      |
@@ -18,6 +18,10 @@
   <link href="icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" />
   <link href="icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" />
 
+  <link rel="icon" 
+      type="image/png" 
+      href="favicon.ico">
+	  
   <style type="text/css">
   body{
     padding:0;
@@ -33,6 +37,8 @@
 <body>
 	<script src="enchant.min.js"></script>
 	<script src="game.js"></script>
-	<embed name="myMusic" loop="true" hidden="true" src="assets/wumpus.mp3"></embed>
+	<audio autoplay loop>
+    		<source src="sounds/FlappilyWumped.mp3" type="audio/mpeg" />
+	</audio>
 </body>
 </html>
