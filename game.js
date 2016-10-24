@@ -40,6 +40,7 @@ game.preload('assets/avatar.png');
 game.preload('assets/avatar2.png');
 game.preload('assets/avatar3.png');
 game.preload('assets/background.png');
+game.preload('assets/blurple-vigenette.png');
 game.preload('assets/gameover.png');
 game.preload('assets/getready.png');
 game.preload('assets/ground.png');
