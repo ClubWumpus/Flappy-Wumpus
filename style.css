@@ -1,0 +1,10 @@
+body{
+    padding:0;
+    margin: 0;
+    background-color: #2C2F33;
+}
+
+#enchant-stage{
+    margin: auto;
+    position: relative !important;
+}

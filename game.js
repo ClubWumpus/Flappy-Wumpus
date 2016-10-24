@@ -9,15 +9,15 @@
 */
 
 enchant(); // initialize
-var game = new Core(1000, 730); // game stage
+var game = new Core(1280, 720); // game stage
 game.scale = 1;
 game.fps = 60;
 game.started = false;
 game.distance = 0; // initial value, don't change
 
 // settings
-game.gravity = 0.1;
-game.flap_strength = 3.0;
+game.gravity = 0.23;
+game.flap_strength = 5.0;
 game.fly_speed = 2;
 game.obstacle_frequency = 350;
 
@@ -26,8 +26,8 @@ var obstacles = new Group();
 
 var scoreBoard = new Label();
 scoreBoard.text = 0;
-scoreBoard.color = '#FFF';
-scoreBoard.font = 'Arial';
+scoreBoard.color = '#fff';
+scoreBoard.font = 'Open Sans';
 scoreBoard.scaleX = 5;
 scoreBoard.scaleY = 5;
 scoreBoard.textAlign = 'center';
@@ -54,7 +54,7 @@ game.preload('sounds/flap.mp3');
 game.onload = function(){
 
   // add the background
-  game.bg = new Sprite(1000,730);
+  game.bg = new Sprite(1280,720);
   game.bg.image = game.assets['assets/background.png'];
   
   // add game.bg to rootScene
@@ -76,7 +76,7 @@ game.onload = function(){
 	game.rootScene.addChild(game.getready);
 
   // add the floor
-  game.ground = new Sprite(1000,86);
+  game.ground = new Sprite(1280,86);
   game.ground.image = game.assets['assets/ground.png'];
   game.ground.x = 0;
   game.ground.y = game.height - 48;
