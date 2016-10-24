@@ -79,7 +79,7 @@ game.onload = function(){
   game.ground = new Sprite(1280,86);
   game.ground.image = game.assets['assets/ground.png'];
   game.ground.x = 0;
-  game.ground.y = game.height - 48;
+  game.ground.y = game.height - 55;
   
   // add game.ground to rootScene
 	game.rootScene.addChild(game.ground);
