@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-var bannerArray = [{"url":"https://www.youtube.com/watch?v=POnldqfm3Rw","banner":"https://flappy.clubwump.us/img/trailerad.png"},{"url":"https://www.youtube.com/watch?v=POnldqfm3Rw","banner":"https://flappy.clubwump.us/img/trailerad.png"}]
+var bannerArray = [{"url":"https://www.youtube.com/watch?v=POnldqfm3Rw","banner":"https://flappy.clubwump.us/img/trailerad.png"},{"url":"https://www.youtube.com/watch?v=POnldqfm3Rw","banner":"https://flappy.clubwump.us/img/malloryad.png"}]
 
 var selectBanner = bannerArray[Math.floor(Math.random()*bannerArray.length)];
 
