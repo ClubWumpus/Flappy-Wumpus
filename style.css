@@ -15,7 +15,7 @@ h1 {
 }
 
 element.style {
-    border: 4px #fff solid;
+    border: 4px #fff solid !important;
 }
 
 p {
