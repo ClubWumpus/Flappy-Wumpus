@@ -1,3 +1,9 @@
+/*
+COLORS:
+
+
+*/
+
 body{
     color: white;
     padding:0;
@@ -6,12 +12,7 @@ body{
 }
 
 div {
-    transform: scale(1);
-}
-
-
-h1 {
-    color: white;
+    transform: scale(1); /*fixes large loading screen*/
 }
 
 #enchant-stage{
@@ -20,6 +21,20 @@ h1 {
     border: 4px #fff dashed !important;
     border-radius: 4px;
 }
+
+footer {
+    width: 100%;
+}
+
+.footer__inner  {
+    margin: 0 auto;
+    position: relative;
+}
+
+
+
+
+
 
 p {
     color: white;
