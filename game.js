@@ -42,6 +42,7 @@ game.preload('assets/gameover.png');
 game.preload('assets/getready.png');
 game.preload('assets/ground.png');
 game.preload('assets/instructions.png');
+game.preload('assets/mallorySoftSoap.png');
 game.preload('assets/obstacle_top.png');
 game.preload('assets/obstacle_bottom.png');
 game.preload('assets/wumpusGolden.png');
@@ -86,16 +87,22 @@ game.onload = function(){
 	game.rootScene.addChild(game.ground);
 
   // add the main character
-  game.avatar = new Sprite(87,55);
-  // 10% chance to get golden, rainbow or trumpus Wumpus
+  // Adds a 10% chance to get special characters :p
   var randomNumber = Math.random() * 100 + 1;
-  if (randomNumber <= 15) {
+  if (randomNumber <= 10) {
+    game.avatar = new Sprite(87,55);
     game.avatar.image = game.assets['assets/wumpusGolden.png'];
-  } else if (randomNumber <= 30) {
+  } else if (randomNumber <= 20) {
+    game.avatar = new Sprite(87,55);
     game.avatar.image = game.assets['assets/wumpusRainbow.png'];
-  } else if (randomNumber <= 45) {
+  } else if (randomNumber <= 30) {
+    game.avatar = new Sprite(87,55);
     game.avatar.image = game.assets['assets/wumpusTrump.png'];
+  } else if (randomNumber <= 40) {
+    game.avatar = new Sprite(87,85);
+    game.avatar.image = game.assets['assets/mallorySoftSoap.png'];
   } else {
+    game.avatar = new Sprite(87,55);
     game.avatar.image = game.assets['assets/wumpusVanilla.png'];
   }
 
