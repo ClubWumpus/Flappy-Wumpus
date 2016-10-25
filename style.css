@@ -1,5 +1,5 @@
 body{
-	color: white;
+    color: white;
     padding:0;
     margin: 0;
     background-color: #2C2F33;
@@ -12,7 +12,8 @@ h1 {
 #enchant-stage{
     margin: auto;
     position: relative !important;
-    border: 4px #fff solid !important;
+    border: 4px #fff dashed !important;
+    border-radius: 4px;
 }
 
 p {
