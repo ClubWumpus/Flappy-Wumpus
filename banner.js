@@ -4,6 +4,6 @@ var bannerArray = [{"url":"https://www.youtube.com/watch?v=POnldqfm3Rw","banner"
 
 var selectBanner = bannerArray[Math.floor(Math.random()*bannerArray.length)];
 
-$('#random-banner').html('<a href="' + selectBanner.url + '"><img src="' + selectBanner.banner + '" alt="Random Banner" /></a>');
+$('#bottom-banner__inner').html('<a href="' + selectBanner.url + '"><img src="' + selectBanner.banner + '" alt="Random Banner" /></a>');
 
 });
