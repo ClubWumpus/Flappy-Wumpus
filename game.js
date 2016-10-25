@@ -36,9 +36,6 @@ scoreBoard.y = 40;
 
 
 // preload assets
-game.preload('assets/avatar.png');
-game.preload('assets/avatar2.png');
-game.preload('assets/avatar3.png');
 game.preload('assets/background.png');
 game.preload('assets/blurple-vigenette.png');
 game.preload('assets/gameover.png');
@@ -47,6 +44,10 @@ game.preload('assets/ground.png');
 game.preload('assets/instructions.png');
 game.preload('assets/obstacle_top.png');
 game.preload('assets/obstacle_bottom.png');
+game.preload('assets/wumpusGolden.png');
+game.preload('assets/wumpusRainbow.png');
+game.preload('assets/wumpusTrump.png');
+game.preload('assets/wumpusVanilla.png');
 game.preload('sounds/FlappilyWumped.mp3');
 game.preload('sounds/flap.mp3');
 
@@ -86,14 +87,16 @@ game.onload = function(){
 
   // add the main character
   game.avatar = new Sprite(87,55);
-  // 10% chance to get golden or rainbow Wumpus
+  // 10% chance to get golden, rainbow or trumpus Wumpus
   var randomNumber = Math.random() * 100 + 1;
   if (randomNumber <= 10) {
-    game.avatar.image = game.assets['assets/avatar2.png'];
+    game.avatar.image = game.assets['assets/wumpusGolden.png'];
   } else if (randomNumber <= 20) {
-    game.avatar.image = game.assets['assets/avatar3.png'];
+    game.avatar.image = game.assets['assets/wumpusRainbow.png'];
+  } else if (randomNumber >= 30) {
+    game.avatar.image = game.assets['assets/wumpusTrump.png'];
   } else {
-    game.avatar.image = game.assets['assets/avatar.png'];
+    game.avatar.image = game.assets['assets/wumpusVanilla.png'];
   }
 
   game.avatar.x = 100;
