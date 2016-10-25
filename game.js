@@ -86,7 +86,16 @@ game.onload = function(){
 
   // add the main character
   game.avatar = new Sprite(87,55);
-  game.avatar.image = game.assets['assets/avatar.png'];
+  // 10% chance to get golden or rainbow Wumpus
+  var randomNumber = Math.random() * 100 + 1;
+  if (randomNumber <= 10) {
+    game.avatar.image = game.assets['assets/avatar2.png'];
+  } else if (randomNumber <= 20) {
+    game.avatar.image = game.assets['assets/avatar3.png'];
+  } else {
+    game.avatar.image = game.assets['assets/avatar.png'];
+  }
+
   game.avatar.x = 100;
   game.avatar.y = 100;
   game.avatar.ySpeed = 0;
