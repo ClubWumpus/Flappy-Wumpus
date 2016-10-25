@@ -36,19 +36,15 @@ div {
     transform: scale(1) !important; /*fixes large loading screen*/
 }
 
-.trailerad {
+#bottom-banner {
     margin: 20px 0;
     width: 100vw;
     z-index: 100;
 }
 
-.trailerad__inner {
+#bottom-banner__inner {
     width: 994px;
     margin: 0 auto;
-}
-
-.trailerad__inner a img {
-
 }
 
 @keyframes wiggle {
@@ -60,7 +56,7 @@ div {
     100% {transform: rotate(0deg);}
 }
 
-.trailerad__inner a img:hover {
+#bottom-banner__inner a img:hover {
     animation: wiggle 0.5s;
 }
 
