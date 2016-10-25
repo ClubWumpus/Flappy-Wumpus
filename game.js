@@ -20,7 +20,7 @@ game.gravity = 0.4;
 game.flap_strength = 7.0;
 game.fly_speed = 2;
 game.obstacle_frequency = 350;
-
+game.keybind(32, 'jump');  
 
 var obstacles = new Group();
 
@@ -168,6 +168,24 @@ game.onenterframe = function(){
 
     // track flying progress
     game.distance += game.fly_speed;
+    
+    game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN,function(){
+    	if(game.started){
+    
+            // flap
+            game.avatar.ySpeed = -game.flap_strength;
+
+       }else{
+    
+            // start game
+            game.started = true;
+	
+	       // remove getready and instructions
+	        game.rootScene.removeChild(game.getready);
+	        game.rootScene.removeChild(game.instructions);
+    
+        }
+  	});
 
     // check if we need to spawn obstacle
     if(game.distance % game.obstacle_frequency == 0){
