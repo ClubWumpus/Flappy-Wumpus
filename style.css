@@ -2,7 +2,13 @@ body{
     color: white;
     padding:0;
     margin: 0;
-    background-color: #2C2F33;
+    background:url('img/background.png') -25px -50px;
+    position:fixed ;
+    top:0;
+    width:100%;
+    z-index:0;
+    height:100%;
+    background-size: calc(100% + 50px);
 }
 
 h1 {
