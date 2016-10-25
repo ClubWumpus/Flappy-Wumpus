@@ -5,6 +5,11 @@ body{
     background-color: #2C2F33;
 }
 
+div {
+    transform: scale(1);
+}
+
+
 h1 {
     color: white;
 }
