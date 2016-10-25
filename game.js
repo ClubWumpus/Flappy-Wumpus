@@ -16,8 +16,8 @@ game.started = false;
 game.distance = 0; // initial value, don't change
 
 // settings
-game.gravity = 0.23;
-game.flap_strength = 5.0;
+game.gravity = 0.4;
+game.flap_strength = 7.0;
 game.fly_speed = 2;
 game.obstacle_frequency = 350;
 
