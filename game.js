@@ -89,11 +89,11 @@ game.onload = function(){
   game.avatar = new Sprite(87,55);
   // 10% chance to get golden, rainbow or trumpus Wumpus
   var randomNumber = Math.random() * 100 + 1;
-  if (randomNumber <= 10) {
+  if (randomNumber <= 15) {
     game.avatar.image = game.assets['assets/wumpusGolden.png'];
-  } else if (randomNumber <= 20) {
-    game.avatar.image = game.assets['assets/wumpusRainbow.png'];
   } else if (randomNumber <= 30) {
+    game.avatar.image = game.assets['assets/wumpusRainbow.png'];
+  } else if (randomNumber <= 45) {
     game.avatar.image = game.assets['assets/wumpusTrump.png'];
   } else {
     game.avatar.image = game.assets['assets/wumpusVanilla.png'];
