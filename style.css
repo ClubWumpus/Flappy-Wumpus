@@ -1,10 +1,39 @@
 body{
+	color: white;
     padding:0;
     margin: 0;
     background-color: #2C2F33;
 }
 
+h1 {
+    color: white;
+}
+
 #enchant-stage{
     margin: auto;
     position: relative !important;
+}
+
+element.style {
+    border: 4px #fff solid !important;
+}
+
+p {
+    color: white;
+}
+
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: #99AAB5;
+}
+
+a:hover {
+    color: #7289DA;
+}
+
+a:active {
+    color: #7289DA;
 }
