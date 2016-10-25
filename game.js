@@ -93,7 +93,7 @@ game.onload = function(){
     game.avatar.image = game.assets['assets/wumpusGolden.png'];
   } else if (randomNumber <= 20) {
     game.avatar.image = game.assets['assets/wumpusRainbow.png'];
-  } else if (randomNumber >= 30) {
+  } else if (randomNumber <= 30) {
     game.avatar.image = game.assets['assets/wumpusTrump.png'];
   } else {
     game.avatar.image = game.assets['assets/wumpusVanilla.png'];
