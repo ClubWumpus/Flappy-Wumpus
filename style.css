@@ -24,28 +24,66 @@ body{
     width: 100vw;
 }
 
+#enchant-stage {
+    position: relative !important;
+    border: 4px #fff dashed;
+    border-radius: 4px;
+    margin: 30px auto 0 auto;
+}
+
 div {
     transform: scale(1) !important; /*fixes large loading screen*/
 }
 
-footer {
+.trailerad {
+    margin: 20px 0;
     width: 100vw;
-    height: 280px;
-    margin-top: 30px;
+    z-index: 100;
+}
+
+.trailerad__inner {
+    width: 994px;
+    margin: 0 auto;
+}
+
+.trailerad__inner a img {
+
+}
+
+@keyframes wiggle {
+    0% {transform: rotate(0deg);}
+    20% {transform: rotate(-2deg);}
+    40% {transform: rotate(2deg);}
+    60% {transform: rotate(-2deg);}
+    80% {transform: rotate(2deg);}
+    100% {transform: rotate(0deg);}
+}
+
+.trailerad__inner a img:hover {
+    animation: wiggle 0.5s;
+}
+
+footer {
+    padding-top: 10px;
+    width: 100vw;
+    height: 130px;
     background-color: #23272A;
 }
 
 .footer__inner {
-    padding: 20px 0;
     color: #bbb;
     text-align: center;
     font-family: 'Helvetica', 'Open Sans', 'Arial', 'sans-serif';
     font-size: 16px;
     font-weight: 200;
-    line-height: 25px;
+    line-height: 26px;
 }
 
-.footer__inner a{
+.footer__inner a img {
+    margin-top: 15px;
+}
+
+.footer__inner a {
     text-decoration: none;
     color: #eee;
     transition: all 0.2s linear;
@@ -53,12 +91,4 @@ footer {
 
 .footer__inner a:hover {
     color: #7289DA;
-}
-
-#enchant-stage {
-    margin: auto;
-    position: relative !important;
-    border: 4px #fff dashed;
-    border-radius: 4px;
-    margin-top: 30px;
 }
