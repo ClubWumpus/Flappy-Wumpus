@@ -6,13 +6,19 @@ body{
     position:fixed ;
     top:0;
     width:100%;
-    z-index:0;
     height:100%;
     background-size: calc(100% + 50px);
 }
 
 h1 {
     color: white;
+}
+
+.footer {
+    background-color: #222222;
+    padding: 25px 0;
+    color: rgba(255, 255, 255, 0.3);
+    text-align: center;
 }
 
 #enchant-stage{
