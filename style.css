@@ -8,11 +8,24 @@ body{
     color: white;
     padding:0;
     margin: 0;
-    background-color: #2C2F33;
+    background:url('img/background.png') -25px -50px;
+    position: absolute;
+    top:0;
+    width:100%;
+    height:100%;
+    background-size: calc(100% + 50px);
 }
 
 div {
     transform: scale(1); /*fixes large loading screen*/
+}
+
+.footer {
+    background-color: #222222;
+    padding: 25px 0;
+    color: rgba(255, 255, 255, 0.3);
+    text-align: center;
+    font-size: 14px;
 }
 
 #enchant-stage{
