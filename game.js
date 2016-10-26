@@ -107,7 +107,7 @@ game.onload = function(){
   }
 
   game.avatar.x = 100;
-  game.avatar.y = 315;
+  game.avatar.y = 295;
   game.avatar.ySpeed = 0;
   
 
