@@ -34,6 +34,7 @@ scoreBoard.textAlign = 'center';
 scoreBoard.x = game.width/2 - scoreBoard.width/2;
 scoreBoard.y = 40;
 
+var gameEnded = false;
 
 // preload assets
 game.preload('assets/halloween/background.png',
@@ -127,26 +128,21 @@ game.onload = function(){
   game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
 } // end game.onload #initialize game
 
-// listen for tap/click
-function game_touched(){
-
-  if(game.started){
-    
-    // flap
-    game.avatar.ySpeed = -game.flap_strength;
-
-  }else{
-    
-    // start game
+// listen for tap/click/up arrow
+function game_touched() {
+  if(!game.started) {
+      //start the game
     game.started = true;
-	
-	// remove getready and instructions
-	game.rootScene.removeChild(game.getready);
-	game.rootScene.removeChild(game.instructions);
-  // 'flap' on click/up arrow which starts the game
-  game.avatar.ySpeed = -game.flap_strength;
-
-  }
+  
+    // remove getready and instructions
+    game.rootScene.removeChild(game.getready);
+    game.rootScene.removeChild(game.instructions);
+}
+      game.avatar.ySpeed = -game.flap_strength;
+      if(gameEnded == false) {
+        var flapSound = new Audio('sounds/flap.mp3');
+        flapSound.play();
+      }
 }
 
 // game loop
@@ -172,24 +168,6 @@ game.onenterframe = function(){
     // track flying progress
     game.distance += game.fly_speed;
     
-    game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN,function(){
-    	if(game.started){
-    
-            // flap
-            game.avatar.ySpeed = -game.flap_strength;
-
-       }else{
-    
-            // start game
-            game.started = true;
-	
-	       // remove getready and instructions
-	        game.rootScene.removeChild(game.getready);
-	        game.rootScene.removeChild(game.instructions);
-    
-        }
-  	});
-
     // check if we need to spawn obstacle
     if(game.distance % game.obstacle_frequency == 0){
       
@@ -253,10 +231,13 @@ function spawnObstacle(){
 
 function gameover(){
   // add the instructions
+  gameEnded = true;
   game.gameover = new Sprite(602,163);
   game.gameover.image = game.assets['assets/gameover.png'];
   game.gameover.x = (game.width/2) - (game.gameover.width/2);
   game.gameover.y = 120;
+  var gameOverSound = new Audio('sounds/game-over.mp3');
+  gameOverSound.play();
 
   // show gameover graphic
   game.rootScene.addChild(game.gameover);
