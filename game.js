@@ -142,6 +142,7 @@ function game_touched() {
 	
 }
 		if (difficulty == "brainpower") {
+			console.log("powered!")
 			var backgroundAudio=new Audio('sounds/FlappilyWumped.mp3');
 			backgroundAudio.pause();
 		}
