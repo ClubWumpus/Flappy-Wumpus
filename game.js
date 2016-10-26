@@ -93,7 +93,7 @@ game.onload = function(){
 
 	game.flapButton = new Sprite(200,200);
 	game.flapButton.image = game.assets['assets/flap.png'];
-	game.flapButton.x = 25;
+	game.flapButton.x = 10;
 	game.flapButton.y = 520;
 	
 	// adds flapButton to the rootScene
