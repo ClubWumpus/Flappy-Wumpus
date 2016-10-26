@@ -139,13 +139,14 @@ function game_touched() {
     // remove getready and instructions
     game.rootScene.removeChild(game.getready);
     game.rootScene.removeChild(game.instructions);
-	
-}
 		if (difficulty == "lul") {
 			console.log("powered!")
 			var backgroundAudio=new Audio('sounds/FlappilyWumped.mp3');
 			backgroundAudio.pause();
 		}
+	
+}
+		
       game.avatar.ySpeed = -game.flap_strength;
       if(gameEnded == false) {
         var flapSound = new Audio('sounds/flap.mp3');
