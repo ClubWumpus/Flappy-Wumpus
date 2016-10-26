@@ -91,7 +91,7 @@ game.onload = function(){
 	game.rootScene.addChild(game.getready);
 	
 
-	game.flapButton = new Sprite(100,100);
+	game.flapButton = new Sprite(200,200);
 	game.flapButton.image = game.assets['assets/flap.png'];
 	game.flapButton.x = 10;
 	game.flapButton.y = 520;
@@ -100,7 +100,6 @@ game.onload = function(){
 	// adds flapButton to the rootScene
 	
 	game.rootScene.addChild(game.flapButton);
-	console.log(game.flapButton.buttonMode)
 	
   
   // add the main character
@@ -143,6 +142,7 @@ game.onload = function(){
 
   game.rootScene.addEventListener(enchant.Event.TOUCH_END, game_touched);
   game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
+	game.rootScene.addEventListener(game.flapButton.buttonPressed == true, game_touched);
 	
 } // end game.onload #initialize game
 
