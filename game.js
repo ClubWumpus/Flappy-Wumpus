@@ -126,6 +126,7 @@ game.onload = function(){
 
   game.rootScene.addEventListener(enchant.Event.TOUCH_END, game_touched);
   game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
+game.rootScene.addEventListener(game.input.jump, game_touched);
 } // end game.onload #initialize game
 
 // listen for tap/click/up arrow
