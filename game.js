@@ -268,11 +268,11 @@ function hi() {
 	game.rootScene.removeChild(game.gameover)
 	game.rootScene.removeChild(obstacles);
 	game.started = false;
+	game.rootScene.addChild(game.getready);
 	 game.getready = new Sprite(592,177);
   	game.getready.image = game.assets['assets/getready.png'];
   	game.getready.x = (game.width / 2) - (game.getready.width / 2);
   	game.getready.y = (game.height / 2) - (game.getready.height / 2);
-	game.rootScene.addChild(game.getready);
 	game.instructions = new Sprite(420,22);
   	game.instructions.image = game.assets['assets/instructions.png'];
   	game.instructions.x = (game.width/2) - (game.instructions.width/2);
