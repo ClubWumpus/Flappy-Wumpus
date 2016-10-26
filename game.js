@@ -52,6 +52,16 @@ game.preload('assets/wumpusVanilla.png');
 game.preload('sounds/FlappilyWumped.mp3');
 game.preload('sounds/flap.mp3');
 
+function restart(core) {
+	core.replaceScene(createGameScene());
+}
+
+function createGameScene() {
+    var scene = new Scene();
+    // initialize the game character and rules.
+    return scene;
+}
+
 // initialize game
 game.onload = function(){
 
@@ -125,6 +135,7 @@ game.onload = function(){
 
   game.rootScene.addEventListener(enchant.Event.TOUCH_END, game_touched);
   game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
+	return restart(this)
 } // end game.onload #initialize game
 
 // listen for tap/click
