@@ -264,6 +264,10 @@ function spawnObstacle(){
   
 } // end spawnObstacle
 
+function hi() {
+	return "hi"
+}
+
 function gameover(){
   // add the instructions
   game.gameover = new Sprite(602,163);
@@ -275,7 +279,7 @@ function gameover(){
   game.rootScene.addChild(game.gameover);
 
   game.rootScene.addEventListener(enchant.Event.TOUCH_END,function(){
-    window.location.reload();
+    console.log(hi())
   });
 
   // stop the game loop
