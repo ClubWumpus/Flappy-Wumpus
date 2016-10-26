@@ -171,7 +171,6 @@ game.onenterframe = function(){
 
     // track flying progress
     game.distance += game.fly_speed;
-    
     game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN,function(){
     	if(game.started){
     
@@ -189,7 +188,21 @@ game.onenterframe = function(){
     
         }
   	});
-
+  
+		game.rootScene.addEventListener(enchant.Event.LEFT_BUTTON_DOWN,function(){
+			var backgroundAudio=document.getElementById("bg-audio");
+    	if (backgroundAudio.volume != 0) {
+				backgroundAudio.volume=backgroundAudio.volume - 0.1;
+			}
+  	});
+		
+		game.rootScene.addEventListener(enchant.Event.RIGHT_BUTTON_DOWN,function(){
+			var backgroundAudio=document.getElementById("bg-audio");
+    	if (backgroundAudio.volume != 1) {
+				backgroundAudio.volume=backgroundAudio.volume + 0.1;
+			}
+  	});
+		
     // check if we need to spawn obstacle
     if(game.distance % game.obstacle_frequency == 0){
       
