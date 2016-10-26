@@ -236,6 +236,8 @@ function gameover(){
   game.gameover.image = game.assets['assets/gameover.png'];
   game.gameover.x = (game.width/2) - (game.gameover.width/2);
   game.gameover.y = 120;
+  var deathSound = new Audio('sounds/death.mp3');
+  deathSound.play();
   var gameOverSound = new Audio('sounds/game-over.mp3');
   gameOverSound.play();
 
