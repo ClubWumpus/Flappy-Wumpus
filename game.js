@@ -9,7 +9,6 @@
 */
 
 enchant(); // initialize
-var difficulty = "lul";
 var game = new Core(1280, 720); // game stage
 game.scale = 1;
 game.fps = 60;
@@ -139,7 +138,8 @@ function game_touched() {
     // remove getready and instructions
     game.rootScene.removeChild(game.getready);
     game.rootScene.removeChild(game.instructions);
-		if (difficulty == "lul") {
+	  var difficulty = "brainpower";
+		if (difficulty == "brainpower") {
 			console.log("powered!")
 			var backgroundAudio=new Audio('sounds/FlappilyWumped.mp3');
 			backgroundAudio.pause();
