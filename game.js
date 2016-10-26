@@ -107,7 +107,7 @@ game.onload = function(){
   }
 
   game.avatar.x = 100;
-  game.avatar.y = 100;
+  game.avatar.y = 315;
   game.avatar.ySpeed = 0;
   
 
@@ -124,10 +124,12 @@ game.onload = function(){
 	game.rootScene.addChild(game.instructions);
 
   game.rootScene.addEventListener(enchant.Event.TOUCH_END, game_touched);
+  game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
 } // end game.onload #initialize game
 
 // listen for tap/click
 function game_touched(){
+
   if(game.started){
     
     // flap
@@ -141,7 +143,8 @@ function game_touched(){
 	// remove getready and instructions
 	game.rootScene.removeChild(game.getready);
 	game.rootScene.removeChild(game.instructions);
-    
+  // 'flap' on click/up arrow which starts the game
+  game.avatar.ySpeed = -game.flap_strength;
 
   }
 }
