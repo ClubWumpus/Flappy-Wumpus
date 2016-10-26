@@ -41,6 +41,11 @@ div {
     transform: scale(1) !important; /*fixes large loading screen*/
 }
 
+scoreBoard {
+    font: 'Comic Sans MS';
+    font-family: 'Comic Sans MS';
+}
+
 #bottom-banner {
     margin: 20px 0;
     width: 100vw;
