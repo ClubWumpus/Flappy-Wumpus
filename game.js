@@ -264,50 +264,6 @@ function spawnObstacle(){
   
 } // end spawnObstacle
 
-function hi() {
-	
-	// what a mess
-	game.rootScene.removeChild(game.avatar)
-	game.rootScene.removeChild(game.gameover)
-	game.rootScene.removeChild(obstacles);
-	game.started = false;
-	var randomNumber = Math.random() * 100 + 1;
-  	if (randomNumber <= 10) {
-  	  game.avatar = new Sprite(87,55);
-  	  game.avatar.image = game.assets['assets/wumpusGolden.png'];
-  	} else if (randomNumber <= 20) {
-  	  game.avatar = new Sprite(87,55);
-  	  game.avatar.image = game.assets['assets/wumpusRainbow.png'];
-  	} else if (randomNumber <= 30) {
-  	  game.avatar = new Sprite(87,55);
-  	  game.avatar.image = game.assets['assets/wumpusTrump.png'];
-  	} else if (randomNumber <= 40) {
-  	  game.avatar = new Sprite(87,85);
-  	  game.avatar.image = game.assets['assets/mallorySoftSoap.png'];
-  	} else {
-  	  game.avatar = new Sprite(87,55);
-  	  game.avatar.image = game.assets['assets/wumpusVanilla.png'];
-  	}
-	game.avatar.x = 100;
-  	game.avatar.y = 295;
-  	game.avatar.ySpeed = 0;
-	game.rootScene.addChild(game.avatar);
-	game.rootScene.addChild(game.getready);
-	 game.getready = new Sprite(592,177);
-  	game.getready.image = game.assets['assets/getready.png'];
-  	game.getready.x = (game.width / 2) - (game.getready.width / 2);
-  	game.getready.y = (game.height / 2) - (game.getready.height / 2);
-	game.rootScene.addChild(game.instructions);
-	game.instructions = new Sprite(420,22);
-  	game.instructions.image = game.assets['assets/instructions.png'];
-  	game.instructions.x = (game.width/2) - (game.instructions.width/2);
-  	game.instructions.y = 460;
-	game.distance = 0; // initial value, don't change
-	game.scale = 1;
-	scoreBoard.text = 0;
-	game.rootScene.addChild(obstacles);
-	var obstacles = new Group();
-}
 
 function gameover(){
   // add the instructions
