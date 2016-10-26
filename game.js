@@ -157,7 +157,7 @@ function game_touched() {
       if(gameEnded == false) {
 
         if (playingTrumpus === true) {
-          flapSound = new Audio('sounds/wrong.mp3');
+          flapSound = new Audio('sounds/china.mp3');
         } else {
           flapSound = new Audio('sounds/flap.mp3');
         }
@@ -259,7 +259,11 @@ function gameover(){
   game.gameover.x = (game.width/2) - (game.gameover.width/2);
   game.gameover.y = 120;
 
-    var deathSound = new Audio('sounds/death.mp3');
+    if (playingTrumpus === true) {
+      var deathSound = new Audio('sounds/wrong.mp3')
+    } else {
+      var deathSound = new Audio('sounds/death.mp3');
+    }
     deathSound.volume = 0.5;
     deathSound.play();
 
