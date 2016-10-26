@@ -70,6 +70,7 @@ footer {
     width: 100vw;
     height: 130px;
     background-color: #23272A;
+    border-top: 2px #6e7173 dashed;
 }
 
 .footer__inner {
