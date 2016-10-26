@@ -34,6 +34,7 @@ scoreBoard.textAlign = 'center';
 scoreBoard.x = game.width/2 - scoreBoard.width/2;
 scoreBoard.y = 40;
 
+var playingTrumpus = false;
 var gameEnded = false;
 
 // preload assets
@@ -97,6 +98,7 @@ game.onload = function(){
     game.avatar = new Sprite(87,55);
     game.avatar.image = game.assets['assets/wumpusRainbow.png'];
   } else if (randomNumber <= 30) {
+    playingTrumpus = true;
     game.avatar = new Sprite(87,55);
     game.avatar.image = game.assets['assets/wumpusTrump.png'];
   } else if (randomNumber <= 40) {
@@ -141,6 +143,7 @@ function game_touched() {
       game.avatar.ySpeed = -game.flap_strength;
       if(gameEnded == false) {
         var flapSound = new Audio('sounds/flap.mp3');
+        flapSound.volume = 0.6;
         flapSound.play();
       }
 }
@@ -236,10 +239,18 @@ function gameover(){
   game.gameover.image = game.assets['assets/gameover.png'];
   game.gameover.x = (game.width/2) - (game.gameover.width/2);
   game.gameover.y = 120;
-  var deathSound = new Audio('sounds/death.mp3');
-  deathSound.play();
-  var gameOverSound = new Audio('sounds/game-over.mp3');
-  gameOverSound.play();
+
+  if (playingTrumpus === true) {
+    var deathSound = new Audio('sounds/wrong.mp3');
+  } else {
+    var deathSound = new Audio('sounds/death.mp3');
+  }  
+    deathSound.volume = 0.5;
+    deathSound.play();
+
+    var gameOverSound = new Audio('sounds/game-over.mp3');
+    gameOverSound.volume = 0.5;
+    gameOverSound.play();
 
   // show gameover graphic
   game.rootScene.addChild(game.gameover);
