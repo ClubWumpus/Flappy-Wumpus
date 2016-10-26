@@ -50,9 +50,8 @@ game.preload('assets/halloween/background.png',
 	'assets/wumpusGolden.png',
 	'assets/wumpusRainbow.png',
 	'assets/wumpusTrump.png',
-	'assets/wumpusVanilla.png',
-	'sounds/FlappilyWumped.mp3',
-	'sounds/flap.mp3');
+	'assets/wumpusVanilla.png');
+	
 
 // initialize game
 game.onload = function(){
@@ -142,8 +141,13 @@ function game_touched() {
 }
       game.avatar.ySpeed = -game.flap_strength;
       if(gameEnded == false) {
-        var flapSound = new Audio('sounds/flap.mp3');
-        flapSound.volume = 0.6;
+
+        if (playingTrumpus === true) {
+          flapSound = new Audio('sounds/wrong.mp3');
+        } else {
+          flapSound = new Audio('sounds/flap.mp3');
+        }
+        flapSound.volume = 0.5;
         flapSound.play();
       }
 }
@@ -240,11 +244,7 @@ function gameover(){
   game.gameover.x = (game.width/2) - (game.gameover.width/2);
   game.gameover.y = 120;
 
-  if (playingTrumpus === true) {
-    var deathSound = new Audio('sounds/wrong.mp3');
-  } else {
     var deathSound = new Audio('sounds/death.mp3');
-  }  
     deathSound.volume = 0.5;
     deathSound.play();
 
