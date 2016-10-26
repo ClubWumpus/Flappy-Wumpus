@@ -51,7 +51,7 @@ game.preload('assets/halloween/background.png',
 	'assets/wumpusRainbow.png',
 	'assets/wumpusTrump.png',
 	'assets/wumpusVanilla.png',
-	'assets/flap2.png');
+	'assets/flap.png');
 	
 
 // initialize game
@@ -92,13 +92,15 @@ game.onload = function(){
 	
 
 	game.flapButton = new Sprite(100,100);
-	game.flapButton.image = game.assets['assets/flap2.png'];
+	game.flapButton.image = game.assets['assets/flap.png'];
 	game.flapButton.x = 10;
 	game.flapButton.y = 520;
+	game.flapButton.buttonMode = "right"
 	
 	// adds flapButton to the rootScene
 	
 	game.rootScene.addChild(game.flapButton);
+	console.log(game.flapButton.buttonMode)
 	
   
   // add the main character
