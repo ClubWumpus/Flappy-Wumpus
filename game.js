@@ -273,16 +273,16 @@ function hi() {
   	game.getready.image = game.assets['assets/getready.png'];
   	game.getready.x = (game.width / 2) - (game.getready.width / 2);
   	game.getready.y = (game.height / 2) - (game.getready.height / 2);
+	game.rootScene.addChild(game.instructions);
 	game.instructions = new Sprite(420,22);
   	game.instructions.image = game.assets['assets/instructions.png'];
   	game.instructions.x = (game.width/2) - (game.instructions.width/2);
   	game.instructions.y = 460;
-	game.rootScene.addChild(game.instructions);
 	game.distance = 0; // initial value, don't change
 	game.scale = 1;
 	scoreBoard.text = 0;
-	var obstacles = new Group();
 	game.rootScene.addChild(obstacles);
+	var obstacles = new Group();
 }
 
 function gameover(){
