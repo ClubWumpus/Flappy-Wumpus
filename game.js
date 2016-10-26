@@ -268,6 +268,23 @@ function hi() {
 	game.rootScene.removeChild(game.gameover)
 	game.rootScene.removeChild(obstacles);
 	game.started = false;
+	var randomNumber = Math.random() * 100 + 1;
+  	if (randomNumber <= 10) {
+  	  game.avatar = new Sprite(87,55);
+  	  game.avatar.image = game.assets['assets/wumpusGolden.png'];
+  	} else if (randomNumber <= 20) {
+  	  game.avatar = new Sprite(87,55);
+  	  game.avatar.image = game.assets['assets/wumpusRainbow.png'];
+  	} else if (randomNumber <= 30) {
+  	  game.avatar = new Sprite(87,55);
+  	  game.avatar.image = game.assets['assets/wumpusTrump.png'];
+  	} else if (randomNumber <= 40) {
+  	  game.avatar = new Sprite(87,85);
+  	  game.avatar.image = game.assets['assets/mallorySoftSoap.png'];
+  	} else {
+  	  game.avatar = new Sprite(87,55);
+  	  game.avatar.image = game.assets['assets/wumpusVanilla.png'];
+  	}
 	game.rootScene.addChild(game.getready);
 	 game.getready = new Sprite(592,177);
   	game.getready.image = game.assets['assets/getready.png'];
