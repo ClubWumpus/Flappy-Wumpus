@@ -17,6 +17,10 @@ Not quite black
     padding: 0;
 }
 
+#bg-audio {
+    
+}
+
 body{
     color: white;
     background:url('img/background.png') center center fixed;
