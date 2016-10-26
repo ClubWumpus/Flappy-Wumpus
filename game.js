@@ -265,6 +265,7 @@ function spawnObstacle(){
 } // end spawnObstacle
 
 function hi() {
+	game.rootScene.removeChild(game.gameover)
 	game.rootScene.removeChild(obstacles);
 	game.started = false;
 	 game.getready = new Sprite(592,177);
@@ -274,6 +275,7 @@ function hi() {
 	game.distance = 0; // initial value, don't change
 	game.scale = 1;
 	scoreBoard.text = 0;
+	var obstacles = new Group();
 	game.rootScene.addChild(obstacles);
 }
 
