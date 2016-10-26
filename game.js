@@ -77,19 +77,8 @@ game.onload = function(){
   game.getready.y = (game.height / 2) - (game.getready.height / 2);
 
   // add game.getready to rootScene
-	game.rootScene.addChild(game.getready);
 	
-
-	game.flapButton = new Sprite(200,200);
-	game.flapButton.image = game.assets['assets/flap.png'];
-	game.flapButton.x = 100;
-	game.flapButton.y = 500;
-	
-	// adds flapButton to the rootScene
-	
-	game.rootScene.addChild(game.flapButton);
-	
-  // add the floor
+	// add the floor
   game.ground = new Sprite(1280,86);
   game.ground.image = game.assets['assets/ground.png'];
   game.ground.x = 0;
@@ -98,6 +87,20 @@ game.onload = function(){
   // add game.ground to rootScene
 	game.rootScene.addChild(game.ground);
 
+	
+	game.rootScene.addChild(game.getready);
+	
+
+	game.flapButton = new Sprite(200,200);
+	game.flapButton.image = game.assets['assets/flap.png'];
+	game.flapButton.x = 50;
+	game.flapButton.y = 520;
+	
+	// adds flapButton to the rootScene
+	
+	game.rootScene.addChild(game.flapButton);
+	
+  
   // add the main character
   // Adds a 10% chance to get special characters :p
   var randomNumber = Math.random() * 100 + 1;
