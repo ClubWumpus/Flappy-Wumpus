@@ -142,7 +142,7 @@ game.onload = function(){
 
   //game.rootScene.addEventListener(enchant.Event.TOUCH_END, game_touched);
   game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
-	game.rootScene.addEventListener(enchant.Event.RIGHT_BUTTON.DOWN, alert);
+	game.rootScene.addEventListener(enchant.Event.RIGHT_BUTTON_DOWN, alert);
 	
 } // end game.onload #initialize game
 
