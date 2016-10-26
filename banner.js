@@ -9,9 +9,7 @@ var selectBanner = bannerArray[Math.floor(Math.random()*bannerArray.length)];
 
 $('#bottom-banner__inner').html('<a href="' + selectBanner.url + '"><img src="' + selectBanner.banner + '" alt="Random Banner" /></a>');
 
-window.onload = function() {
-    var backgroundAudio=document.getElementById("bgAudio");
+    var backgroundAudio=document.getElementById("bg-audio");
     backgroundAudio.volume=0.5;
-}
   
 });
