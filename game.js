@@ -265,6 +265,7 @@ function spawnObstacle(){
 } // end spawnObstacle
 
 function hi() {
+	game.rootScene.removeChild(game.avatar)
 	game.rootScene.removeChild(game.gameover)
 	game.rootScene.removeChild(obstacles);
 	game.started = false;
@@ -285,6 +286,10 @@ function hi() {
   	  game.avatar = new Sprite(87,55);
   	  game.avatar.image = game.assets['assets/wumpusVanilla.png'];
   	}
+	game.avatar.x = 100;
+  	game.avatar.y = 295;
+  	game.avatar.ySpeed = 0;
+	game.rootScene.addChild(game.avatar);
 	game.rootScene.addChild(game.getready);
 	 game.getready = new Sprite(592,177);
   	game.getready.image = game.assets['assets/getready.png'];
