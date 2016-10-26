@@ -39,7 +39,7 @@ scoreBoard.y = 40;
 game.preload('assets/halloween/background.png',
 	'assets/blurple-vigenette.png',
 	'assets/gameover.png',
-	'assets/getready.png',
+	'assets/halloween/getready.png',
 	'assets/ground.png',
 	'assets/instructions.png',
 	'assets/mallorySoftSoap.png',
@@ -70,7 +70,7 @@ game.onload = function(){
 
   // add the start game screen
   game.getready = new Sprite(592,177);
-  game.getready.image = game.assets['assets/getready.png'];
+  game.getready.image = game.assets['assets/halloween/getready.png'];
   game.getready.x = (game.width / 2) - (game.getready.width / 2);
   game.getready.y = (game.height / 2) - (game.getready.height / 2);
 
