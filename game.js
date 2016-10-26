@@ -36,15 +36,15 @@ scoreBoard.y = 40;
 
 
 // preload assets
-game.preload('assets/background.png',
+game.preload('assets/halloween/background.png',
 	'assets/blurple-vigenette.png',
 	'assets/gameover.png',
 	'assets/getready.png',
 	'assets/ground.png',
 	'assets/instructions.png',
 	'assets/mallorySoftSoap.png',
-	'assets/obstacle_top.png',
-	'assets/obstacle_bottom.png',
+	'assets/halloween/obstacle_top.png',
+	'assets/halloween/obstacle_bottom.png',
 	'assets/wumpusGolden.png',
 	'assets/wumpusRainbow.png',
 	'assets/wumpusTrump.png',
