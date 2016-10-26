@@ -244,7 +244,11 @@ function gameover(){
   game.gameover.x = (game.width/2) - (game.gameover.width/2);
   game.gameover.y = 120;
 
-    var deathSound = new Audio('sounds/death.mp3');
+    if (playingTrumpus === true) {
+      var deathSound = new Audio('sounds/china.mp3')
+    } else {
+      var deathSound = new Audio('sounds/death.mp3');
+    }
     deathSound.volume = 0.5;
     deathSound.play();
 
