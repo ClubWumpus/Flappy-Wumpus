@@ -34,17 +34,18 @@ scoreBoard.textAlign = 'center';
 scoreBoard.x = game.width/2 - scoreBoard.width/2;
 scoreBoard.y = 40;
 
+var gameEnded = false;
 
 // preload assets
 game.preload('assets/halloween/background.png',
 	'assets/blurple-vigenette.png',
 	'assets/gameover.png',
-	'assets/getready.png',
+	'assets/halloween/getready.png',
 	'assets/ground.png',
 	'assets/instructions.png',
 	'assets/mallorySoftSoap.png',
-	'assets/halloween/obstacle_top.png',
-	'assets/halloween/obstacle_bottom.png',
+	'assets/obstacle_top.png',
+	'assets/obstacle_bottom.png',
 	'assets/wumpusGolden.png',
 	'assets/wumpusRainbow.png',
 	'assets/wumpusTrump.png',
@@ -70,7 +71,7 @@ game.onload = function(){
 
   // add the start game screen
   game.getready = new Sprite(592,177);
-  game.getready.image = game.assets['assets/getready.png'];
+  game.getready.image = game.assets['assets/halloween/getready.png'];
   game.getready.x = (game.width / 2) - (game.getready.width / 2);
   game.getready.y = (game.height / 2) - (game.getready.height / 2);
 
@@ -127,26 +128,21 @@ game.onload = function(){
   game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
 } // end game.onload #initialize game
 
-// listen for tap/click
-function game_touched(){
-
-  if(game.started){
-    
-    // flap
-    game.avatar.ySpeed = -game.flap_strength;
-
-  }else{
-    
-    // start game
+// listen for tap/click/up arrow
+function game_touched() {
+  if(!game.started) {
+      //start the game
     game.started = true;
-	
-	// remove getready and instructions
-	game.rootScene.removeChild(game.getready);
-	game.rootScene.removeChild(game.instructions);
-  // 'flap' on click/up arrow which starts the game
-  game.avatar.ySpeed = -game.flap_strength;
-
-  }
+  
+    // remove getready and instructions
+    game.rootScene.removeChild(game.getready);
+    game.rootScene.removeChild(game.instructions);
+}
+      game.avatar.ySpeed = -game.flap_strength;
+      if(gameEnded == false) {
+        var flapSound = new Audio('sounds/flap.mp3');
+        flapSound.play();
+      }
 }
 
 // game loop
@@ -171,38 +167,7 @@ game.onenterframe = function(){
 
     // track flying progress
     game.distance += game.fly_speed;
-    game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN,function(){
-    	if(game.started){
     
-            // flap
-            game.avatar.ySpeed = -game.flap_strength;
-
-       }else{
-    
-            // start game
-            game.started = true;
-	
-	       // remove getready and instructions
-	        game.rootScene.removeChild(game.getready);
-	        game.rootScene.removeChild(game.instructions);
-    
-        }
-  	});
-  
-		game.rootScene.addEventListener(enchant.Event.LEFT_BUTTON_DOWN,function(){
-			var backgroundAudio=document.getElementById("bg-audio");
-    	if (backgroundAudio.volume != 0) {
-				backgroundAudio.volume=backgroundAudio.volume - 0.1;
-			}
-  	});
-		
-		game.rootScene.addEventListener(enchant.Event.RIGHT_BUTTON_DOWN,function(){
-			var backgroundAudio=document.getElementById("bg-audio");
-    	if (backgroundAudio.volume != 1) {
-				backgroundAudio.volume=backgroundAudio.volume + 0.1;
-			}
-  	});
-		
     // check if we need to spawn obstacle
     if(game.distance % game.obstacle_frequency == 0){
       
@@ -247,7 +212,7 @@ function spawnObstacle(){
   var gap = 200;
 
   var top = new Sprite(85, 545);
-  top.image = game.assets['assets/halloween/obstacle_top.png'];
+  top.image = game.assets['assets/obstacle_top.png'];
   top.x = -obstacles.x + game.width;
   top.y = -550 + pos - gap;
 
@@ -255,7 +220,7 @@ function spawnObstacle(){
   obstacles.addChild(top);
 
   var bottom = new Sprite(85, 545);
-  bottom.image = game.assets['assets/halloween/obstacle_bottom.png'];
+  bottom.image = game.assets['assets/obstacle_bottom.png'];
   bottom.x = -obstacles.x + game.width;
   bottom.y = pos;
   
@@ -264,19 +229,23 @@ function spawnObstacle(){
   
 } // end spawnObstacle
 
-
 function gameover(){
   // add the instructions
+  gameEnded = true;
   game.gameover = new Sprite(602,163);
   game.gameover.image = game.assets['assets/gameover.png'];
   game.gameover.x = (game.width/2) - (game.gameover.width/2);
   game.gameover.y = 120;
+  var deathSound = new Audio('sounds/death.mp3');
+  deathSound.play();
+  var gameOverSound = new Audio('sounds/game-over.mp3');
+  gameOverSound.play();
 
   // show gameover graphic
   game.rootScene.addChild(game.gameover);
 
   game.rootScene.addEventListener(enchant.Event.TOUCH_END,function(){
-    hi()
+    window.location.reload();
   });
 
   // stop the game loop
