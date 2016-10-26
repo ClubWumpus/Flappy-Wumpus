@@ -43,8 +43,8 @@ game.preload('assets/halloween/background.png',
 	'assets/ground.png',
 	'assets/instructions.png',
 	'assets/mallorySoftSoap.png',
-	'assets/halloween/obstacle_top.png',
-	'assets/halloween/obstacle_bottom.png',
+	'assets/obstacle_top.png',
+	'assets/obstacle_bottom.png',
 	'assets/wumpusGolden.png',
 	'assets/wumpusRainbow.png',
 	'assets/wumpusTrump.png',
@@ -234,7 +234,7 @@ function spawnObstacle(){
   var gap = 200;
 
   var top = new Sprite(85, 545);
-  top.image = game.assets['assets/halloween/obstacle_top.png'];
+  top.image = game.assets['assets/obstacle_top.png'];
   top.x = -obstacles.x + game.width;
   top.y = -550 + pos - gap;
 
@@ -242,7 +242,7 @@ function spawnObstacle(){
   obstacles.addChild(top);
 
   var bottom = new Sprite(85, 545);
-  bottom.image = game.assets['assets/halloween/obstacle_bottom.png'];
+  bottom.image = game.assets['assets/obstacle_bottom.png'];
   bottom.x = -obstacles.x + game.width;
   bottom.y = pos;
   
