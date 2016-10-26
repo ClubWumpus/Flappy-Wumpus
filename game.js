@@ -146,6 +146,10 @@ game.onload = function(){
 	
 } // end game.onload #initialize game
 
+enchant.on('RIGHT_BUTTON_DOWN', function() {
+	console.log("hi")
+})
+
 // listen for tap/click/up arrow
 function game_touched() {
   if(!game.started) {
