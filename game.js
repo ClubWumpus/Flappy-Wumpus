@@ -95,7 +95,7 @@ game.onload = function(){
 	game.flapButton.image = game.assets['assets/flap.png'];
 	game.flapButton.x = 10;
 	game.flapButton.y = 520;
-	game.flapButton.buttonMode = "right"
+	game.flapButton.buttonMode = "up"
 	
 	// adds flapButton to the rootScene
 	
@@ -142,13 +142,8 @@ game.onload = function(){
 
   //game.rootScene.addEventListener(enchant.Event.TOUCH_END, game_touched);
   game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
-	game.rootScene.addEventListener(enchant.Event.RIGHT_BUTTON_DOWN, alert);
 	
 } // end game.onload #initialize game
-
-function alert() {
-	console.log("hi")
-}
 
 // listen for tap/click/up arrow
 function game_touched() {
