@@ -265,7 +265,10 @@ function spawnObstacle(){
 } // end spawnObstacle
 
 function hi() {
-	return "hi"
+	game.started = false;
+	game.distance = 0; // initial value, don't change
+	game.scale = 1;
+	scoreBoard.text = 0;
 }
 
 function gameover(){
@@ -279,7 +282,7 @@ function gameover(){
   game.rootScene.addChild(game.gameover);
 
   game.rootScene.addEventListener(enchant.Event.TOUCH_END,function(){
-    console.log(hi())
+    hi()
   });
 
   // stop the game loop
