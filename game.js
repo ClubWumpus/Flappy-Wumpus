@@ -265,9 +265,8 @@ function spawnObstacle(){
 } // end spawnObstacle
 
 function hi() {
-	for (var i = 0; i < obstacles.childNodes.length; i++) {
-		obstacles.removeChild(obstacles.childNodes[i]);
-      	}	
+	
+	// what a mess
 	game.rootScene.removeChild(game.avatar)
 	game.rootScene.removeChild(game.gameover)
 	game.rootScene.removeChild(obstacles);
