@@ -9,6 +9,7 @@
 */
 
 enchant(); // initialize
+var difficulty = "";
 var game = new Core(1280, 720); // game stage
 game.scale = 1;
 game.fps = 60;
@@ -138,7 +139,12 @@ function game_touched() {
     // remove getready and instructions
     game.rootScene.removeChild(game.getready);
     game.rootScene.removeChild(game.instructions);
+	
 }
+		if (difficulty == "brainpower") {
+			var backgroundAudio=new Audio('sounds/FlappilyWumped.mp3');
+			backgroundAudio.pause();
+		}
       game.avatar.ySpeed = -game.flap_strength;
       if(gameEnded == false) {
         var flapSound = new Audio('sounds/flap.mp3');
@@ -173,7 +179,8 @@ game.onenterframe = function(){
     if(game.distance % game.obstacle_frequency == 0){
       
       // spawn obstacle
-      spawnObstacle();
+      spawnObstacle()
+    game.started = true;
       
       // clean up old obstacles
       for (var i = 0; i < obstacles.childNodes.length; i++) {
