@@ -57,7 +57,7 @@ game.onload = function(){
 
   // add the background
   game.bg = new Sprite(1280,720);
-  game.bg.image = game.assets['assets/background.png'];
+  game.bg.image = game.assets['assets/halloween/background.png'];
   
   // add game.bg to rootScene
 	game.rootScene.addChild(game.bg);
