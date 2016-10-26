@@ -50,7 +50,8 @@ game.preload('assets/halloween/background.png',
 	'assets/wumpusGolden.png',
 	'assets/wumpusRainbow.png',
 	'assets/wumpusTrump.png',
-	'assets/wumpusVanilla.png');
+	'assets/wumpusVanilla.png',
+	'assets/flap.png');
 	
 
 // initialize game
@@ -77,7 +78,17 @@ game.onload = function(){
 
   // add game.getready to rootScene
 	game.rootScene.addChild(game.getready);
+	
 
+	game.flapButton = new Sprite(200,200);
+	game.flapButton.image = game.assets['assets/flap.png'];
+	game.flapButton.x = 100;
+	game.flapButton.y = 100;
+	
+	// adds flapButton to the rootScene
+	
+	game.rootScene.addChild(game.flapButton);
+	
   // add the floor
   game.ground = new Sprite(1280,86);
   game.ground.image = game.assets['assets/ground.png'];
@@ -127,7 +138,7 @@ game.onload = function(){
 
   game.rootScene.addEventListener(enchant.Event.TOUCH_END, game_touched);
   game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
-game.rootScene.addEventListener(game.input.jump, game_touched);
+	
 } // end game.onload #initialize game
 
 // listen for tap/click/up arrow
@@ -139,12 +150,6 @@ function game_touched() {
     // remove getready and instructions
     game.rootScene.removeChild(game.getready);
     game.rootScene.removeChild(game.instructions);
-	  var difficulty = "brainpower";
-		if (difficulty == "brainpower") {
-			console.log("powered!")
-			var backgroundAudio=new Audio('sounds/FlappilyWumped.mp3');
-			backgroundAudio.pause();
-		}
 	
 }
 		
