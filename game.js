@@ -140,7 +140,7 @@ game.onload = function(){
   // add game.instructions to rootScene
 	game.rootScene.addChild(game.instructions);
 
-  game.rootScene.addEventListener(enchant.Event.TOUCH_END, game_touched);
+  //game.rootScene.addEventListener(enchant.Event.TOUCH_END, game_touched);
   game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
 	game.rootScene.addEventListener(game.flapButton.buttonPressed == true, game_touched);
 	
