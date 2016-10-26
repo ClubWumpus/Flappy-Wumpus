@@ -266,9 +266,7 @@ function spawnObstacle(){
 
 function hi() {
 	for (var i = 0; i < obstacles.childNodes.length; i++) {
-        	if(obstacles.childNodes[i].x + obstacles.x + 100 < -85){
-        	  obstacles.removeChild(obstacles.childNodes[i]);
-        	}
+		obstacles.removeChild(obstacles.childNodes[i]);
       	}	
 	game.rootScene.removeChild(game.avatar)
 	game.rootScene.removeChild(game.gameover)
