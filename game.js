@@ -53,6 +53,7 @@ game.preload('sounds/FlappilyWumped.mp3');
 game.preload('sounds/flap.mp3');
 
 function restart(core) {
+	console.log("hi")
 	core.replaceScene(createGameScene());
 }
 
