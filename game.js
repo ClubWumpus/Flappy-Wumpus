@@ -36,21 +36,21 @@ scoreBoard.y = 40;
 
 
 // preload assets
-game.preload('assets/background.png');
-game.preload('assets/blurple-vigenette.png');
-game.preload('assets/gameover.png');
-game.preload('assets/getready.png');
-game.preload('assets/ground.png');
-game.preload('assets/instructions.png');
-game.preload('assets/mallorySoftSoap.png');
-game.preload('assets/obstacle_top.png');
-game.preload('assets/obstacle_bottom.png');
-game.preload('assets/wumpusGolden.png');
-game.preload('assets/wumpusRainbow.png');
-game.preload('assets/wumpusTrump.png');
-game.preload('assets/wumpusVanilla.png');
-game.preload('sounds/FlappilyWumped.mp3');
-game.preload('sounds/flap.mp3');
+game.preload('assets/background.png',
+	'assets/blurple-vigenette.png',
+	'assets/gameover.png',
+	'assets/getready.png',
+	'assets/ground.png'),
+	'assets/instructions.png',
+	'assets/mallorySoftSoap.png',
+	'assets/obstacle_top.png',
+	'assets/obstacle_bottom.png',
+	'assets/wumpusGolden.png',
+	'assets/wumpusRainbow.png',
+	'assets/wumpusTrump.png',
+	'assets/wumpusVanilla.png',
+	'sounds/FlappilyWumped.mp3',
+	'sounds/flap.mp3');
 
 // initialize game
 game.onload = function(){
