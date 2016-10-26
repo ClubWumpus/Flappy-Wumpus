@@ -51,7 +51,7 @@ game.preload('assets/halloween/background.png',
 	'assets/wumpusRainbow.png',
 	'assets/wumpusTrump.png',
 	'assets/wumpusVanilla.png',
-	'assets/flap.png');
+	'assets/flap2.png');
 	
 
 // initialize game
@@ -91,8 +91,8 @@ game.onload = function(){
 	game.rootScene.addChild(game.getready);
 	
 
-	game.flapButton = new Sprite(200,200);
-	game.flapButton.image = game.assets['assets/flap.png'];
+	game.flapButton = new Sprite(100,100);
+	game.flapButton.image = game.assets['assets/flap2.png'];
 	game.flapButton.x = 10;
 	game.flapButton.y = 520;
 	
