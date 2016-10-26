@@ -36,28 +36,28 @@ scoreBoard.y = 40;
 
 
 // preload assets
-game.preload('assets/background.png');
-game.preload('assets/blurple-vigenette.png');
-game.preload('assets/gameover.png');
-game.preload('assets/getready.png');
-game.preload('assets/ground.png');
-game.preload('assets/instructions.png');
-game.preload('assets/mallorySoftSoap.png');
-game.preload('assets/obstacle_top.png');
-game.preload('assets/obstacle_bottom.png');
-game.preload('assets/wumpusGolden.png');
-game.preload('assets/wumpusRainbow.png');
-game.preload('assets/wumpusTrump.png');
-game.preload('assets/wumpusVanilla.png');
-game.preload('sounds/FlappilyWumped.mp3');
-game.preload('sounds/flap.mp3');
+game.preload('assets/halloween/background.png',
+	'assets/blurple-vigenette.png',
+	'assets/gameover.png',
+	'assets/getready.png',
+	'assets/ground.png',
+	'assets/instructions.png',
+	'assets/mallorySoftSoap.png',
+	'assets/halloween/obstacle_top.png',
+	'assets/halloween/obstacle_bottom.png',
+	'assets/wumpusGolden.png',
+	'assets/wumpusRainbow.png',
+	'assets/wumpusTrump.png',
+	'assets/wumpusVanilla.png',
+	'sounds/FlappilyWumped.mp3',
+	'sounds/flap.mp3');
 
 // initialize game
 game.onload = function(){
 
   // add the background
   game.bg = new Sprite(1280,720);
-  game.bg.image = game.assets['assets/background.png'];
+  game.bg.image = game.assets['assets/halloween/background.png'];
   
   // add game.bg to rootScene
 	game.rootScene.addChild(game.bg);
@@ -247,7 +247,7 @@ function spawnObstacle(){
   var gap = 200;
 
   var top = new Sprite(85, 545);
-  top.image = game.assets['assets/obstacle_top.png'];
+  top.image = game.assets['assets/halloween/obstacle_top.png'];
   top.x = -obstacles.x + game.width;
   top.y = -550 + pos - gap;
 
@@ -255,7 +255,7 @@ function spawnObstacle(){
   obstacles.addChild(top);
 
   var bottom = new Sprite(85, 545);
-  bottom.image = game.assets['assets/obstacle_bottom.png'];
+  bottom.image = game.assets['assets/halloween/obstacle_bottom.png'];
   bottom.x = -obstacles.x + game.width;
   bottom.y = pos;
   
