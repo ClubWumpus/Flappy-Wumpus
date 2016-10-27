@@ -137,7 +137,11 @@ function gameinit() {
 
 function clearobstacles() {
 	for (var i = 0; i < obstacles.childNodes.length; i++) {
-     obstacles.removeChild(obstacles.childNodes[i]);
+   	obstacles.removeChild(obstacles.childNodes[i]);
+		if (i + 1 == obstacles.childNodes.length && obstacles.childNodes.length != 1 {
+				console.log("hi")
+				clearobstacles()
+		}
   }
 }
 
