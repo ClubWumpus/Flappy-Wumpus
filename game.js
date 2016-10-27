@@ -54,7 +54,8 @@ game.preload('assets/halloween/background.png',
 	'assets/flap.png',
 	'assets/back2menu.png',
 	'assets/play.png',
-	'assets/flappywumpuslogo2.png');
+	'assets/flappywumpuslogo2.png',
+	'assets/retry.png');
 	
 
 // initialize game
@@ -145,7 +146,7 @@ function clearobstacles() {
 }
 
 function gamerestart() {
-	game.rootScene.clearEventListener(enchant.Event.TOUCH_END)
+	game.rootScene.clearEventListener(enchant.Event.DOWN_BUTTON_DOWN)
 	game.gravity = 0.5;
 	game.flap_strength = 9;
 	game.fly_speed = 3.5;
@@ -407,6 +408,15 @@ function gameover(){
   game.gameover.image = game.assets['assets/gameover.png'];
   game.gameover.x = (game.width/2) - (game.gameover.width/2);
   game.gameover.y = 120;
+	
+	// adding a retry button
+	game.retrybutton = new Sprite(300,100);
+	game.retrybutton.image = game.assets['assets/retry.png'];
+	game.retrybutton.y = game.height/2 + 50;
+	game.retrybutton.x = game.width/2 - 150;
+	game.retrybutton.buttonMode = "down"
+	
+	game.rootScene.addChild(game.playbutton);
 
     if (playingTrumpus === true) {
       var deathSound = new Audio('sounds/wrong.mp3')
@@ -423,7 +433,7 @@ function gameover(){
   // show gameover graphic
   game.rootScene.addChild(game.gameover);
 
-  game.rootScene.addEventListener(enchant.Event.TOUCH_END,function(){
+  game.rootScene.addEventListener(enchant.Event.DOWN_BUTTON_DOWN,function(){
 		gamerestart()
     //window.location.reload();
   });
