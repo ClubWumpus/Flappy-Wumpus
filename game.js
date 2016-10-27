@@ -170,8 +170,12 @@ game.onload = function(){
 	game.flappylogo.x = game.width/2 - 225;
 	
 	game.rootScene.addChild(game.flappylogo);
-	
 	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
+	game.flappylogo.addEventListener(Event.ENTER_FRAME, function () {
+		if (game.flappylogo != game.height/2 - 350) {
+     game.flappylogo.y--
+		}
+  });
   
 } // end game.onload #initialize game
 
