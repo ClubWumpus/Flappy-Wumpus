@@ -136,7 +136,9 @@ function gameinit() {
 }
 
 function gamerestart() {
-	scoreBoard.text = "0"
+	playingTrumpus = false;
+	gameEnded = false;
+	scoreBoard.text = "0";
 	game.rootScene.removeChild(obstacles);
 	game.rootScene.clearEventListener(enchant.Event.UP_BUTTON_DOWN);
 	
