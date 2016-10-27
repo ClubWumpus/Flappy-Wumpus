@@ -397,7 +397,7 @@ function game_touched() {
     game.rootScene.removeChild(game.instructions);
 	
 	game.avatar.ySpeed = -game.flap_strength;
-	flapAnimation()
+//	flapAnimation()
       if(gameEnded == false) {
 
         if (playingTrumpus === true) {
