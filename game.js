@@ -310,7 +310,7 @@ function game_touched() {
 
 // game loop
 game.onenterframe = function(){
-  if(game.started == true){
+  if(gameEnded == false){
     game.avatar.ySpeed += game.gravity;
     game.avatar.y += game.avatar.ySpeed;
 
