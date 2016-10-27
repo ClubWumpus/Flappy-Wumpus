@@ -254,6 +254,8 @@ function gamerestart() {
 }
 
 function openmenu() {
+	game.rootScene.removeChild(game.playbutton);
+	game.rootScene.removeChild(game.flappylogo);
 	game.rootScene.removeChild(game.retrybutton);
 	game.rootScene.removeChild(game.menubutton);
 	game.rootScene.clearEventListener(enchant.Event.DOWN_BUTTON_DOWN);
