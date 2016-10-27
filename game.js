@@ -476,7 +476,7 @@ function spawnObstacle(){
   top.image = game.assets['assets/obstacle_top.png'];
   top.x = -obstacles.x + game.width;
   top.y = -550 + pos - gap;
-
+	top.buttonMode == "up"
   // add top obstacle to obstacles group
   obstacles.addChild(top);
 
@@ -484,6 +484,7 @@ function spawnObstacle(){
   bottom.image = game.assets['assets/obstacle_bottom.png'];
   bottom.x = -obstacles.x + game.width;
   bottom.y = pos;
+	bottom.buttonMode == "up";
   
   // add bottom obstacle to obstacles group
   obstacles.addChild(bottom);
