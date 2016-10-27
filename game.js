@@ -54,7 +54,7 @@ game.preload('assets/halloween/background.png',
 	'assets/flap.png',
 	'assets/back2menu.png',
 	'assets/play.png',
-	'assets/flappywumpuslogo.png');
+	'assets/flappywumpuslogo2.png');
 	
 
 // initialize game
@@ -164,7 +164,7 @@ game.onload = function(){
 	// adding the logo
 	
 	game.flappylogo = new Sprite(464,206);
-	game.flappylogo.image = game.assets['assets/flappywumpuslogo.png'];
+	game.flappylogo.image = game.assets['assets/flappywumpuslogo2.png'];
 	game.flappylogo.y = game.height/2 - 300;
 	game.flappylogo.x = game.width/2 - 250;
 	
