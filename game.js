@@ -52,12 +52,10 @@ game.preload('assets/halloween/background.png',
 	'assets/wumpusRainbow.png',
 	'assets/wumpusTrump.png',
 	'assets/wumpusVanilla.png',
-	'assets/flap.png',
 	'assets/back2menu.png',
 	'assets/play.png',
 	'assets/flappywumpuslogo2.png',
-	'assets/retry.png',
-	'assets/flapping.png');
+	'assets/retry.png');
 	
 
 // initialize game
@@ -97,19 +95,7 @@ function gameinit() {
   // add game.getready to rootScene
 
 	
-	game.rootScene.addChild(game.getready);
-	
-
-	game.flapButton = new Sprite(200,200);
-	game.flapButton.image = game.assets['assets/flap.png'];
-	game.flapButton.x = 1050;
-	game.flapButton.y = 520;
-	game.flapButton.buttonMode = "up"
-	
-	// adds flapButton to the rootScene
-	
-	game.rootScene.addChild(game.flapButton);
-	
+	game.rootScene.addChild(game.getready);	
   
   // add the main character
   // Adds a 10% chance to get special characters :p
@@ -165,14 +151,6 @@ function clearobstacles() {
   }
 }
 
-// animation for flap button
-function flapAnimation() {
-	game.flapButton.image = game.assets['assets/flapping.png'];
-	setTimeout(function() {
-		game.flapButton.image = game.assets['assets/flap.png'];	
-	}, 100)
-}
-
 function gamerestart() {
 	
 	// clearing sprites up
@@ -224,17 +202,6 @@ function gamerestart() {
 
 	
 	game.rootScene.addChild(game.getready);
-	
-
-	game.flapButton = new Sprite(200,200);
-	game.flapButton.image = game.assets['assets/flap.png'];
-	game.flapButton.x = 1050;
-	game.flapButton.y = 520;
-	game.flapButton.buttonMode = "up"
-	
-	// adds flapButton to the rootScene
-	
-	game.rootScene.addChild(game.flapButton);
 	
 	var randomNumber = Math.random() * 100 + 1;
   if (randomNumber <= 10) {
@@ -405,7 +372,7 @@ function game_touched() {
     game.rootScene.removeChild(game.instructions);
 	
 	game.avatar.ySpeed = -game.flap_strength;
-	flapAnimation()
+//	flapAnimation()
       if(gameEnded == false) {
 
         if (playingTrumpus === true) {
@@ -519,7 +486,7 @@ function gameover(){
 	// adding a retry button
 	game.retrybutton = new Sprite(300,100);
 	game.retrybutton.image = game.assets['assets/retry.png'];
-	game.retrybutton.y = game.height/2 + 50;
+	game.retrybutton.y = game.height/2 + 60;
 	game.retrybutton.x = game.width/2 - 150;
 	game.retrybutton.buttonMode = "down"
 	
