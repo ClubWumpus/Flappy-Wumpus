@@ -36,7 +36,6 @@ scoreBoard.y = 40;
 
 var playingTrumpus = false;
 var gameEnded = false;
-var onMenu = true;
 
 // preload assets
 game.preload('assets/halloween/background.png',
@@ -62,7 +61,6 @@ game.preload('assets/halloween/background.png',
 
 // initialize game
 function gameinit() {
-	onMenu = false;
 	game.rootScene.removeChild(game.playbutton);
 	game.rootScene.removeChild(game.flappylogo);
 	game.rootScene.clearEventListener(enchant.Event.UP_BUTTON_DOWN);
@@ -157,7 +155,6 @@ function flapAnimation() {
 }
 
 function gamerestart() {
-	onMenu = false;
 	game.rootScene.removeChild(game.retrybutton);
 	game.rootScene.removeChild(game.menubutton);
 	game.rootScene.clearEventListener(enchant.Event.DOWN_BUTTON_DOWN);
@@ -240,7 +237,6 @@ function gamerestart() {
 }
 
 function openmenu() {
-	onMenu = true;
 	game.rootScene.removeChild(game.retrybutton);
 	game.rootScene.removeChild(game.menubutton);
 	game.rootScene.clearEventListener(enchant.Event.DOWN_BUTTON_DOWN);
@@ -267,7 +263,6 @@ function openmenu() {
 	game.flappylogo.x = game.width/2 - 225;
 	
 	game.rootScene.addChild(game.flappylogo);
-	logoTimer()
 	
 	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
 	game.flappylogo.addEventListener(Event.ENTER_FRAME, function () {
