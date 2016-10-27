@@ -310,7 +310,7 @@ function game_touched() {
 
 // game loop
 game.onenterframe = function(){
-  if(game.started){
+  if(game.started == true){
     game.avatar.ySpeed += game.gravity;
     game.avatar.y += game.avatar.ySpeed;
 
@@ -396,6 +396,7 @@ function spawnObstacle(){
 function gameover(){
   // add the instructions
   gameEnded = true;
+	game.started = false;
 	game.rootScene.removeChild(game.flapButton);
   game.gameover = new Sprite(602,163);
   game.gameover.image = game.assets['assets/gameover.png'];
@@ -423,7 +424,7 @@ function gameover(){
   });
 
   // stop the game loop
-  game.onenterframe = null;
+  //game.onenterframe = null;
 
 }
 
