@@ -217,6 +217,7 @@ function gamerestart() {
   game.getready.image = game.assets['assets/halloween/getready.png'];
   game.getready.x = (game.width / 2) - (game.getready.width / 2);
   game.getready.y = (game.height / 2) - (game.getready.height / 2);
+	game.getready.buttonMode = "up"
 
   // add game.getready to rootScene
 
@@ -265,6 +266,7 @@ function gamerestart() {
   game.instructions.image = game.assets['assets/instructions.png'];
   game.instructions.x = (game.width/2) - (game.instructions.width/2);
   game.instructions.y = 460;
+	game.instructions.buttonMode = "up"
 	game.rootScene.removeChild(scoreBoard)
 	game.rootScene.addChild(scoreBoard)
 	
