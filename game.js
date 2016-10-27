@@ -165,8 +165,8 @@ game.onload = function(){
 	
 	game.flappylogo = new Sprite(464,206);
 	game.flappylogo.image = game.assets['assets/flappywumpuslogo2.png'];
-	game.flappylogo.y = game.height/2 - 300;
-	game.flappylogo.x = game.width/2 - 250;
+	game.flappylogo.y = game.height/2 - 250;
+	game.flappylogo.x = game.width/2 - 200;
 	
 	game.rootScene.addChild(game.flappylogo);
 	
