@@ -323,7 +323,9 @@ function openmenu() {
 var logoVariable = false
 
 function logoTimer() {
-	setTimeout(function() {
+	// disabling for now
+	
+	/*setTimeout(function() {
 		if (logoVariable == false) {
 			logoVariable = true;
 			logoTimer()
@@ -332,7 +334,7 @@ function logoTimer() {
 			logoVariable = false;
 			logoTimer()
 		}
-	}, 1000)
+	}, 1000)*/
 }
 
 game.onload = function(){
