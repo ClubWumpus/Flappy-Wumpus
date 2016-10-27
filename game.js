@@ -146,7 +146,8 @@ function clearobstacles() {
 }
 
 function gamerestart() {
-	game.rootScene.clearEventListener(enchant.Event.DOWN_BUTTON_DOWN)
+	game.rootScene.removeChild(game.retrybutton);
+	game.rootScene.clearEventListener(enchant.Event.DOWN_BUTTON_DOWN);
 	game.gravity = 0.5;
 	game.flap_strength = 9;
 	game.fly_speed = 3.5;
