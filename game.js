@@ -368,12 +368,13 @@ function game_touched() {
     game.started = true;
   
     // remove getready and instructions
-    game.rootScene.removeChild(game.getready);
-    game.rootScene.removeChild(game.instructions);
 	
 }
 		
-      game.avatar.ySpeed = -game.flap_strength;
+      game.rootScene.removeChild(game.getready);
+    game.rootScene.removeChild(game.instructions);
+	
+	game.avatar.ySpeed = -game.flap_strength;
 	flapAnimation()
       if(gameEnded == false) {
 
