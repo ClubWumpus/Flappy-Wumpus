@@ -37,12 +37,14 @@ body{
     overflow-x: hidden;
 }
 
+#game-wrapper {
+    margin: 30px auto 0 auto;
+}
+
 div#enchant-stage {
     position: relative !important;
     border: 4px #fff dashed;
-    border-radius: 4px;
-    margin: auto;
-    top: 0; bottom: 0; left: 0; right: 0;
+    border-radius: 4px; 
    /* margin: 30px auto 0 auto; */
     cursor: url('assets/pointer.ico'), default;
 }
