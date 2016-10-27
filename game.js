@@ -52,12 +52,10 @@ game.preload('assets/halloween/background.png',
 	'assets/wumpusRainbow.png',
 	'assets/wumpusTrump.png',
 	'assets/wumpusVanilla.png',
-	'assets/flap.png',
 	'assets/back2menu.png',
 	'assets/play.png',
 	'assets/flappywumpuslogo2.png',
-	'assets/retry.png',
-	'assets/flapping.png');
+	'assets/retry.png');
 	
 
 // initialize game
