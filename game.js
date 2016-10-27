@@ -61,6 +61,7 @@ game.preload('assets/halloween/background.png',
 
 // initialize game
 function gameinit() {
+	game.rootScene.addChild(game.ground);
 	scoreBoard.text = 0;
 	game.rootScene.removeChild(game.playbutton);
 	game.rootScene.removeChild(game.flappylogo);
@@ -72,6 +73,14 @@ function gameinit() {
 
   // add scoreBoard to rootScene
 	game.rootScene.addChild(scoreBoard);
+	
+	game.ground = new Sprite(1280,86);
+  	game.ground.image = game.assets['assets/ground.png'];
+  	game.ground.x = 0;
+  	game.ground.y = game.height - 48;
+  
+  // add game.ground to rootScene
+	game.rootScene.addChild(game.ground);
 
   // add the start game screen
   game.getready = new Sprite(592,177);
@@ -156,6 +165,7 @@ function flapAnimation() {
 }
 
 function gamerestart() {
+	game.rootScene.removeChild(game.ground);
 	game.rootScene.removeChild(game.retrybutton);
 	game.rootScene.removeChild(game.menubutton);
 	game.rootScene.clearEventListener(enchant.Event.DOWN_BUTTON_DOWN);
@@ -174,7 +184,13 @@ function gamerestart() {
 	game.rootScene.clearEventListener(enchant.Event.UP_BUTTON_DOWN);
 	
 	game.rootScene.addChild(obstacles);
-	
+	game.ground = new Sprite(1280,86);
+  	game.ground.image = game.assets['assets/ground.png'];
+  	game.ground.x = 0;
+  	game.ground.y = game.height - 48;
+  
+  	// add game.ground to rootScene
+	game.rootScene.addChild(game.ground);
 	// add the start game screen
   game.getready = new Sprite(592,177);
   game.getready.image = game.assets['assets/halloween/getready.png'];
