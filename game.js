@@ -21,7 +21,6 @@ game.gravity = 0.5;
 game.flap_strength = 9;
 game.fly_speed = 3.5;
 game.obstacle_frequency = 50;
-game.keybind(32, 'jump');
 
 var obstacles = new Group();
 
@@ -60,6 +59,7 @@ game.preload('../assets/halloween/background.png',
 
 // initialize game
 function gameinit() {
+	
 	game.rootScene.addChild(game.ground);
 	scoreBoard.text = 0;
 	game.rootScene.removeChild(game.playbutton);
@@ -93,7 +93,7 @@ function gameinit() {
 	game.getready.buttonMode = "up"
 	
 	// binds space to up
-	game.keybind(32, 'space');
+	game.keybind(32, 'up');
 
   // add game.getready to rootScene
 
@@ -156,6 +156,9 @@ function clearobstacles() {
 
 function gamerestart() {
 
+	// setting space keybind
+	game.keybind(32, 'up');
+	
 	// clearing sprites up
 
 	game.rootScene.removeChild(game.bg);
@@ -202,7 +205,7 @@ function gamerestart() {
 	game.getready.buttonMode = "up"
 	
 	// binds space to up
-	game.keybind(32, 'space');
+	game.keybind(32, 'up');
 
   // add game.getready to rootScene
 
