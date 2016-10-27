@@ -151,6 +151,8 @@ game.onload = function(){
   // add game.ground to rootScene
 	game.rootScene.addChild(game.ground);
 	
+	// adding playbutton stuff
+	
 	game.playbutton = new Sprite(300,100);
 	game.playbutton.image = game.assets['assets/play.png'];
 	game.playbutton.y = game.height/2 - 150;
@@ -158,6 +160,15 @@ game.onload = function(){
 	game.playbutton.buttonMode = "up"
 	
 	game.rootScene.addChild(game.playbutton);
+	
+	// adding the logo
+	
+	game.flappylogo = new Sprite(349,155);
+	game.flappylogo.image = game.assets['assets/flappywumpuslogo.png'];
+	game.flappylogo.y = game.height/2 - 150;
+	game.flappylogo.x = game.width/2 - 150;
+	
+	game.rootScene.addChild(game.flappylogo);
 	
 	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
   
