@@ -166,11 +166,11 @@ function clearobstacles() {
 }
 
 // animation for flap button
-function flapAnimation() {
-	game.flapButton.image = game.assets['assets/flapping.png'];
-	setTimeout(function() {
-		game.flapButton.image = game.assets['assets/flap.png'];	
-	}, 100)
+//function flapAnimation() {
+//	game.flapButton.image = game.assets['assets/flapping.png'];
+//	setTimeout(function() {
+//		game.flapButton.image = game.assets['assets/flap.png'];	
+//	}, 100)
 }
 
 function gamerestart() {
@@ -511,7 +511,7 @@ function gameover(){
 	// adding a retry button
 	game.retrybutton = new Sprite(300,100);
 	game.retrybutton.image = game.assets['assets/retry.png'];
-	game.retrybutton.y = game.height/2 + 50;
+	game.retrybutton.y = game.height/2 + 60;
 	game.retrybutton.x = game.width/2 - 150;
 	game.retrybutton.buttonMode = "down"
 	
