@@ -59,7 +59,7 @@ game.preload('../assets/halloween/background.png',
 
 // initialize game
 function gameinit() {
-	
+	console.log("hi")
 	game.rootScene.addChild(game.ground);
 	scoreBoard.text = 0;
 	game.rootScene.removeChild(game.playbutton);
@@ -270,7 +270,7 @@ function openmenu() {
 	game.playbutton.image = game.assets['../assets/play.png'];
 	game.playbutton.y = game.height/2 + 50;
 	game.playbutton.x = game.width/2 - 150;
-	game.playbutton.buttonMode = "up"
+	game.playbutton.buttonMode = "up";
 
 	game.rootScene.addChild(game.playbutton);
 
@@ -483,8 +483,6 @@ function spawnObstacle(){
 } // end spawnObstacle
 
 function gameover(){
-	// removes keybind
-	game.keyunbind(32)
 	
   // add the instructions
 	game.bg.buttonMode = "";
