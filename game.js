@@ -136,6 +136,7 @@ function gameinit() {
 }
 
 function gamerestart() {
+	game.rootScene.removeChild(game.avatar);
 	game.rootScene.removeChild(game.gameover);
 	playingTrumpus = false;
 	gameEnded = false;
