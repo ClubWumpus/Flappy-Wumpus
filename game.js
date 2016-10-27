@@ -280,7 +280,7 @@ function openmenu() {
 
 	game.rootScene.addChild(game.flappylogo);
 
-	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
+	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gamerestart);
 	
 	// currently disabled
 	
