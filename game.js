@@ -100,15 +100,15 @@ function gameinit() {
 	game.rootScene.addChild(game.getready);
 	
 
-	//game.flapButton = new Sprite(200,200);
-	//game.flapButton.image = game.assets['assets/flap.png'];
-	//game.flapButton.x = 1050;
-	//game.flapButton.y = 520;
-	//game.flapButton.buttonMode = "up"
+	game.flapButton = new Sprite(200,200);
+	game.flapButton.image = game.assets['assets/flap.png'];
+	game.flapButton.x = 1050;
+	game.flapButton.y = 520;
+	game.flapButton.buttonMode = "up"
 	
 	// adds flapButton to the rootScene
 	
-	//game.rootScene.addChild(game.flapButton);
+	game.rootScene.addChild(game.flapButton);
 	
   
   // add the main character
