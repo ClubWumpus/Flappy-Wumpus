@@ -23,6 +23,6 @@ var iframeID = document.getElementById("modalIFrame");
 //focus the IFRAME element 
 $(iframeID).focus(); 
 //use JQuery to find the control in the IFRAME and set focus 
-$(iframeID).contents().find("#game-wrapper").focus(); 
+$(iframeID).contents().find("#game-container").focus(); 
 
 });
