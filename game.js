@@ -335,7 +335,7 @@ game.onload = function(){
 	game.playbutton.image = game.assets['../assets/play.png'];
 	game.playbutton.y = game.height/2 + 50;
 	game.playbutton.x = game.width/2 - 150;
-	game.playbutton.buttonMode = "up"
+	game.playbutton.buttonMode = "left"
 
 	game.rootScene.addChild(game.playbutton);
 
@@ -349,7 +349,7 @@ game.onload = function(){
 	game.rootScene.addChild(game.flappylogo);
 	logoTimer()
 
-	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
+	game.rootScene.addEventListener(enchant.Event.LEFT_BUTTON_DOWN, gameinit);
 	
 	// currently disabled
 	
