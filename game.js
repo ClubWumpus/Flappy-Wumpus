@@ -140,11 +140,15 @@ var logoVariable = false
 
 function logoTimer() {
 	setTimeout(function() {
-		if (logoTimer == false) {
+		if (logoVariable == false) {
 			logoVariable = true;
+			console.log("hi")
+			logoTimer()
 		}
 		else {
 			logoVariable = false;
+			console.log("hi)
+			logoTimer()
 		}
 	}, 1000)
 }
