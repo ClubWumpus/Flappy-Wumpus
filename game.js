@@ -361,7 +361,7 @@ game.onload = function(){
 
 // listen for tap/click/up arrow
 function game_touched() {
-  if(!game.started) {
+  if(game.started != true && gameEnded != true) {
       //start the game
     game.started = true;
 
