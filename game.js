@@ -165,6 +165,8 @@ function flapAnimation() {
 }
 
 function gamerestart() {
+	game.rootScene.removeChild(game.playbutton);
+	game.rootScene.removeChild(game.flappylogo);
 	game.rootScene.removeChild(game.ground);
 	game.rootScene.removeChild(game.retrybutton);
 	game.rootScene.removeChild(game.menubutton);
@@ -514,10 +516,14 @@ function gameover(){
   game.rootScene.addChild(game.gameover);
 
   game.rootScene.addEventListener(enchant.Event.DOWN_BUTTON_DOWN,function(){
+	  game.rootScene.removeChild(game.playbutton);
+	game.rootScene.removeChild(game.flappylogo);
 		gamerestart()
     //window.location.reload();
   });
 	game.rootScene.addEventListener(enchant.Event.RIGHT_BUTTON_DOWN,function(){
+		game.rootScene.removeChild(game.playbutton);
+	game.rootScene.removeChild(game.flappylogo);
 		openmenu()
     //window.location.reload();
   });
