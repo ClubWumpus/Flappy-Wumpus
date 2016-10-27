@@ -148,9 +148,9 @@ function clearobstacles() {
 
 // animation for flap button
 function flapAnimation() {
-	game.flapbutton.image = ['assets/flapping.png']
+	game.flapButton.image = game.assets['assets/flapping.png'];
 	setTimeout(function() {
-		game.flapbutton.image = ['assets/flap.png']	
+		game.flapButton.image = game.assets['assets/flap.png'];	
 	}, 500)
 }
 
