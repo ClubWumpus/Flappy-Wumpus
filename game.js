@@ -171,7 +171,7 @@ function clearobstacles() {
 //	setTimeout(function() {
 //		game.flapButton.image = game.assets['assets/flap.png'];	
 //	}, 100)
-}
+//}
 
 function gamerestart() {
 	
