@@ -488,6 +488,7 @@ function spawnObstacle(){
   
   // add bottom obstacle to obstacles group
   obstacles.addChild(bottom);
+	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
   
 } // end spawnObstacle
 
@@ -511,7 +512,7 @@ function gameover(){
 	
 	game.rootScene.addChild(game.retrybutton);
 	
-	// adding a back2menu button
+	// adding a back2menu button	
 	game.menubutton = new Sprite(300,100);
 	game.menubutton.image = game.assets['assets/back2menu.png'];
 	game.menubutton.y = game.height/2 - 50;
