@@ -368,9 +368,9 @@ function game_touched() {
       if(gameEnded == false) {
 
         if (playingTrumpus === true) {
-          flapSound = new Audio('sounds/china.mp3');
+          flapSound = new Audio('../sounds/china.mp3');
         } else {
-          flapSound = new Audio('sounds/flap.mp3');
+          flapSound = new Audio('../sounds/flap.mp3');
         }
         flapSound.volume = 0.5;
         flapSound.play();
@@ -494,14 +494,14 @@ function gameover(){
 	game.rootScene.addChild(game.menubutton);
 
     if (playingTrumpus === true) {
-      var deathSound = new Audio('sounds/wrong.mp3')
+      var deathSound = new Audio('../sounds/wrong.mp3')
     } else {
-      var deathSound = new Audio('sounds/death.mp3');
+      var deathSound = new Audio('../sounds/death.mp3');
     }
     deathSound.volume = 0.5;
     deathSound.play();
 
-    var gameOverSound = new Audio('sounds/game-over.mp3');
+    var gameOverSound = new Audio('../sounds/game-over.mp3');
     gameOverSound.volume = 0.5;
     gameOverSound.play();
 
