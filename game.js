@@ -59,6 +59,7 @@ game.preload('assets/halloween/background.png',
 
 // initialize game
 function gameinit() {
+	game.rootScene.clearEventListener(enchant.Event.UP_BUTTON_DOWN);
 	// add the background
 
   // add obstacles to rootScene
@@ -153,8 +154,11 @@ game.onload = function(){
 	game.playbutton.image = game.assets['assets/play.png'];
 	game.playbutton.y = game.height/2 - 150;
 	game.playbutton.x = game.width/2 - 150;
+	game.playbutton.buttonMode = "up"
 	
 	game.rootScene.addChild(game.playbutton);
+	
+	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
   
 } // end game.onload #initialize game
 
