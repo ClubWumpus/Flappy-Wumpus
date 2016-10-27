@@ -55,7 +55,8 @@ game.preload('assets/halloween/background.png',
 	'assets/back2menu.png',
 	'assets/play.png',
 	'assets/flappywumpuslogo2.png',
-	'assets/retry.png');
+	'assets/retry.png',
+	'assets/flapping.png');
 	
 
 // initialize game
@@ -143,6 +144,14 @@ function clearobstacles() {
 				clearobstacles()
 		}
   }
+}
+
+// animation for flap button
+function flapAnimation() {
+	game.flapbutton.image = ['assets/flapping.png']
+	setTimeout(function() {
+		game.flapbutton.image = ['assets/flap.png']	
+	}, 500)
 }
 
 function gamerestart() {
@@ -345,6 +354,7 @@ function game_touched() {
 }
 		
       game.avatar.ySpeed = -game.flap_strength;
+	flapAnimation()
       if(gameEnded == false) {
 
         if (playingTrumpus === true) {
