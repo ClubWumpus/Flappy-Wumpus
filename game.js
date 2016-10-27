@@ -530,7 +530,7 @@ function gameover(){
 	game.menubutton.image = game.assets['assets/back2menu.png'];
 	game.menubutton.y = game.height/2 - 50;
 	game.menubutton.x = game.width/2 - 150;
-	game.menubutton.buttonMode = "right"
+	game.menubutton.buttonMode = "a"
 	
 	game.rootScene.addChild(game.menubutton);
 
