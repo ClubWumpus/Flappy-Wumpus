@@ -14,6 +14,7 @@ game.scale = 1;
 game.fps = 60;
 game.started = false;
 game.distance = 0; // initial value, don't change
+offset = {top: 0, left: 0};
 
 // settings
 game.gravity = 0.5;
