@@ -68,6 +68,11 @@ function gameinit() {
 	game.rootScene.clearEventListener(enchant.Event.UP_BUTTON_DOWN);
 	// add the background
 
+	// adds background back
+	game.rootScene.removeChild(game.bg);
+	game.bg.buttonMode = "up";
+	game.rootScene.addChild(game.bg);
+	
   // add obstacles to rootScene
 	game.rootScene.addChild(obstacles);
 
@@ -165,6 +170,10 @@ function flapAnimation() {
 }
 
 function gamerestart() {
+	
+	// clearing sprites up
+	
+	game.rootScene.removeChild(game.bg);
 	game.rootScene.removeChild(game.playbutton);
 	game.rootScene.removeChild(game.flappylogo);
 	game.rootScene.removeChild(game.ground);
@@ -172,6 +181,8 @@ function gamerestart() {
 	game.rootScene.removeChild(game.menubutton);
 	game.rootScene.clearEventListener(enchant.Event.DOWN_BUTTON_DOWN);
 	game.rootScene.clearEventListener(enchant.Event.RIGHT_BUTTON_DOWN);
+	
+	
 	game.gravity = 0.5;
 	game.flap_strength = 9;
 	game.fly_speed = 3.5;
@@ -184,6 +195,11 @@ function gamerestart() {
 	scoreBoard.text = "0";
 	game.rootScene.removeChild(obstacles);
 	game.rootScene.clearEventListener(enchant.Event.UP_BUTTON_DOWN);
+	
+	// does stuff with the background
+	
+	game.bg.buttonMode = "up";
+	game.rootScene.addChild(game.bg)
 	
 	game.rootScene.addChild(obstacles);
 	game.ground = new Sprite(1280,86);
@@ -475,6 +491,7 @@ function spawnObstacle(){
 
 function gameover(){
   // add the instructions
+	game.bg.buttonMode = "";
   gameEnded = true;
 	game.started = false;
 	game.rootScene.removeChild(game.flapButton);
