@@ -136,7 +136,21 @@ function gameinit() {
 	
 }
 
+var logoVariable = false
+
+function logoTimer() {
+	setTimeout(function() {
+		if (logoTimer == false) {
+			logoVariable = true;
+		}
+		else {
+			logoVariable = false;
+		}
+	}, 1000)
+}
+
 game.onload = function(){
+	logoTimer()
 	game.bg = new Sprite(1280,720);
   game.bg.image = game.assets['assets/halloween/background.png'];
   
@@ -172,8 +186,11 @@ game.onload = function(){
 	game.rootScene.addChild(game.flappylogo);
 	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
 	game.flappylogo.addEventListener(Event.ENTER_FRAME, function () {
-		if (game.flappylogo != game.height/2 - 350) {
+		if (logoVariable == false) {
      game.flappylogo.y--
+		}
+		else {
+			game.flappylogo.y++
 		}
   });
   
