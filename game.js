@@ -275,14 +275,17 @@ function openmenu() {
 	game.rootScene.addChild(game.flappylogo);
 
 	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
-	game.flappylogo.addEventListener(Event.ENTER_FRAME, function () {
+	
+	// currently disabled
+	
+	/*game.flappylogo.addEventListener(Event.ENTER_FRAME, function () {
 		if (logoVariable == false) {
      game.flappylogo.y--
 		}
 		else {
 			game.flappylogo.y++
 		}
-  });
+  });*/
 }
 
 // Timer for the logo floating animation
@@ -290,7 +293,9 @@ function openmenu() {
 var logoVariable = false
 
 function logoTimer() {
-	setTimeout(function() {
+	// currently disabled
+	
+	/*setTimeout(function() {
 		if (logoVariable == false) {
 			logoVariable = true;
 			logoTimer()
@@ -299,7 +304,7 @@ function logoTimer() {
 			logoVariable = false;
 			logoTimer()
 		}
-	}, 1000)
+	}, 1000)*/
 }
 
 game.onload = function(){
@@ -339,6 +344,10 @@ game.onload = function(){
 	logoTimer()
 
 	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
+	
+	// currently disabled
+	
+	/*
 	game.flappylogo.addEventListener(Event.ENTER_FRAME, function () {
 		if (logoVariable == false) {
      game.flappylogo.y--
@@ -346,7 +355,7 @@ game.onload = function(){
 		else {
 			game.flappylogo.y++
 		}
-  });
+  });*/
 
 } // end game.onload #initialize game
 
