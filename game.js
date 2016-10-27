@@ -151,8 +151,8 @@ game.onload = function(){
 	
 	game.playbutton = new Sprite(300,100);
 	game.playbutton.image = game.assets['assets/play.png'];
-	game.playbutton.y = game.height / 2 + 50;
-	game.playbutton.x = game.width/2 - 50;
+	game.playbutton.y = game.height/2 + 200;
+	game.playbutton.x = game.width/2 - 150;
 	
 	game.rootScene.addChild(game.playbutton);
   
