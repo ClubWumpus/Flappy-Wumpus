@@ -152,7 +152,9 @@ function gameinit() {
   // add game.instructions to rootScene
 	game.rootScene.addChild(game.instructions);
 
-  game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
+	setTimeout(function() {
+  	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
+	}, 100)
 	
 }
 
@@ -274,7 +276,9 @@ function gamerestart() {
 	// add game.instructions to rootScene
 	game.rootScene.addChild(game.instructions);
 	
-	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
+	setTimeout(function() {
+		game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
+	}, 100)
 }
 
 function openmenu() {
@@ -307,15 +311,17 @@ function openmenu() {
 	
 	game.rootScene.addChild(game.flappylogo);
 	
-	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
-	game.flappylogo.addEventListener(Event.ENTER_FRAME, function () {
-		if (logoVariable == false) {
-     game.flappylogo.y--
-		}
-		else {
-			game.flappylogo.y++
-		}
-  });
+	setTimeout(function() {
+		game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
+		game.flappylogo.addEventListener(Event.ENTER_FRAME, function () {
+			if (logoVariable == false) {
+  	   game.flappylogo.y--
+			}
+			else {
+				game.flappylogo.y++
+			}
+  	});
+	}, 100)
 }
 
 // Timer for the logo floating animation
@@ -371,15 +377,18 @@ game.onload = function(){
 	game.rootScene.addChild(game.flappylogo);
 	logoTimer()
 	
-	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
-	game.flappylogo.addEventListener(Event.ENTER_FRAME, function () {
-		if (logoVariable == false) {
-     game.flappylogo.y--
-		}
-		else {
-			game.flappylogo.y++
-		}
-  });
+	
+	setTimeout(function() {
+		game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
+		game.flappylogo.addEventListener(Event.ENTER_FRAME, function () {
+			if (logoVariable == false) {
+  	   game.flappylogo.y--
+			}
+			else {
+				game.flappylogo.y++
+			}
+  	});
+	})
   
 } // end game.onload #initialize game
 
@@ -540,19 +549,20 @@ function gameover(){
 
   // show gameover graphic
   game.rootScene.addChild(game.gameover);
-
-  game.rootScene.addEventListener(enchant.Event.DOWN_BUTTON_DOWN,function(){
-	  game.rootScene.removeChild(game.playbutton);
-	game.rootScene.removeChild(game.flappylogo);
-		gamerestart()
-    //window.location.reload();
-  });
-	game.rootScene.addEventListener(enchant.Event.RIGHT_BUTTON_DOWN,function(){
-		game.rootScene.removeChild(game.playbutton);
-	game.rootScene.removeChild(game.flappylogo);
-		openmenu()
-    //window.location.reload();
-  });
+	setTimeout() {
+  	game.rootScene.addEventListener(enchant.Event.DOWN_BUTTON_DOWN,function(){
+		  game.rootScene.removeChild(game.playbutton);
+		game.rootScene.removeChild(game.flappylogo);
+			gamerestart()
+  	  //window.location.reload();
+  	});
+		game.rootScene.addEventListener(enchant.Event.RIGHT_BUTTON_DOWN,function(){
+			game.rootScene.removeChild(game.playbutton);
+		game.rootScene.removeChild(game.flappylogo);
+			openmenu()
+  	  //window.location.reload();
+  	});
+	}, 100)
 
   // stop the game loop
   //game.onenterframe = null;
