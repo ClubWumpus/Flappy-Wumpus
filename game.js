@@ -139,7 +139,6 @@ function clearobstacles() {
 	for (var i = 0; i < obstacles.childNodes.length; i++) {
    	obstacles.removeChild(obstacles.childNodes[i]);
 		if (obstacles.childNodes.length >= 1) {
-				console.log("hi")
 				clearobstacles()
 		}
   }
@@ -215,6 +214,8 @@ function gamerestart() {
   game.instructions.image = game.assets['assets/instructions.png'];
   game.instructions.x = (game.width/2) - (game.instructions.width/2);
   game.instructions.y = 460;
+	game.rootScene.removeChild(scoreBoard)
+	game.rootScene.addChild(scoreBoard)
 	
 	// add game.instructions to rootScene
 	game.rootScene.addChild(game.instructions);
