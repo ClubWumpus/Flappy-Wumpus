@@ -22,6 +22,9 @@ game.flap_strength = 9;
 game.fly_speed = 3.5;
 game.obstacle_frequency = 50;
 
+// binding
+game.keybind(32, 'up');
+
 var obstacles = new Group();
 
 var scoreBoard = new Label();
@@ -91,9 +94,6 @@ function gameinit() {
   game.getready.x = (game.width / 2) - (game.getready.width / 2);
   game.getready.y = (game.height / 2) - (game.getready.height / 2);
 	game.getready.buttonMode = "up"
-	
-	// binds space to up
-	game.keybind(32, 'up');
 
   // add game.getready to rootScene
 
@@ -141,7 +141,9 @@ function gameinit() {
   // add game.instructions to rootScene
 	game.rootScene.addChild(game.instructions);
 
-  game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
+	setTimeout(function() {
+  	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
+	}, 500)
 
 }
 
@@ -201,8 +203,6 @@ function gamerestart() {
   game.getready.y = (game.height / 2) - (game.getready.height / 2);
 	game.getready.buttonMode = "up"
 	
-	// binds space to up
-	game.keybind(32, 'up');
 
   // add game.getready to rootScene
 
