@@ -142,6 +142,9 @@ function clearobstacles() {
 }
 
 function gamerestart() {
+	game.gravity = 0.5;
+	game.flap_strength = 9;
+	game.fly_speed = 3.5;
 	game.started = false;
 	clearobstacles()
 	game.rootScene.removeChild(game.avatar);
