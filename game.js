@@ -70,7 +70,6 @@ function gameinit() {
 
 	// adds background back
 	game.rootScene.removeChild(game.bg);
-	game.bg.buttonMode = "up";
 	game.rootScene.addChild(game.bg);
 	
   // add obstacles to rootScene
@@ -144,6 +143,8 @@ function gameinit() {
   game.instructions.image = game.assets['assets/instructions.png'];
   game.instructions.x = (game.width/2) - (game.instructions.width/2);
   game.instructions.y = 460;
+	
+	game.bg.buttonMode = "up";
 
   // add game.instructions to rootScene
 	game.rootScene.addChild(game.instructions);
