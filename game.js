@@ -22,6 +22,9 @@ game.flap_strength = 9;
 game.fly_speed = 3.5;
 game.obstacle_frequency = 50;
 
+// binding
+game.keybind(32, 'up');
+
 var obstacles = new Group();
 
 var scoreBoard = new Label();
@@ -64,6 +67,7 @@ function gameinit() {
 	scoreBoard.text = 0;
 	game.rootScene.removeChild(game.playbutton);
 	game.rootScene.removeChild(game.flappylogo);
+	game.rootScene.clearEventListener(enchant.Event.LEFT_BUTTON_DOWN);
 	game.rootScene.clearEventListener(enchant.Event.UP_BUTTON_DOWN);
 	// add the background
 
@@ -91,9 +95,6 @@ function gameinit() {
   game.getready.x = (game.width / 2) - (game.getready.width / 2);
   game.getready.y = (game.height / 2) - (game.getready.height / 2);
 	game.getready.buttonMode = "up"
-	
-	// binds space to up
-	game.keybind(32, 'up');
 
   // add game.getready to rootScene
 
@@ -141,7 +142,7 @@ function gameinit() {
   // add game.instructions to rootScene
 	game.rootScene.addChild(game.instructions);
 
-  game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
+  	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
 
 }
 
@@ -166,6 +167,7 @@ function gamerestart() {
 	game.rootScene.removeChild(game.menubutton);
 	game.rootScene.clearEventListener(enchant.Event.DOWN_BUTTON_DOWN);
 	game.rootScene.clearEventListener(enchant.Event.RIGHT_BUTTON_DOWN);
+	game.rootScene.clearEventListener(enchant.Event.LEFT_BUTTON_DOWN);
 
 
 	game.gravity = 0.5;
@@ -201,8 +203,6 @@ function gamerestart() {
   game.getready.y = (game.height / 2) - (game.getready.height / 2);
 	game.getready.buttonMode = "up"
 	
-	// binds space to up
-	game.keybind(32, 'up');
 
   // add game.getready to rootScene
 
@@ -246,7 +246,7 @@ function gamerestart() {
 
 	// add game.instructions to rootScene
 	game.rootScene.addChild(game.instructions);
-
+	
 	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
 }
 
@@ -267,7 +267,7 @@ function openmenu() {
 	game.playbutton.image = game.assets['../assets/play.png'];
 	game.playbutton.y = game.height/2 + 50;
 	game.playbutton.x = game.width/2 - 150;
-	game.playbutton.buttonMode = "up";
+	game.playbutton.buttonMode = "left";
 
 	game.rootScene.addChild(game.playbutton);
 
@@ -280,7 +280,7 @@ function openmenu() {
 
 	game.rootScene.addChild(game.flappylogo);
 
-	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gamerestart);
+	game.rootScene.addEventListener(enchant.Event.LEFT_BUTTON_DOWN, gamerestart);
 	
 	// currently disabled
 	
@@ -335,7 +335,7 @@ game.onload = function(){
 	game.playbutton.image = game.assets['../assets/play.png'];
 	game.playbutton.y = game.height/2 + 50;
 	game.playbutton.x = game.width/2 - 150;
-	game.playbutton.buttonMode = "up"
+	game.playbutton.buttonMode = "left"
 
 	game.rootScene.addChild(game.playbutton);
 
@@ -349,7 +349,7 @@ game.onload = function(){
 	game.rootScene.addChild(game.flappylogo);
 	logoTimer()
 
-	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
+	game.rootScene.addEventListener(enchant.Event.LEFT_BUTTON_DOWN, gameinit);
 	
 	// currently disabled
 	
