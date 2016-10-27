@@ -59,6 +59,7 @@ game.preload('assets/halloween/background.png',
 
 // initialize game
 function gameinit() {
+	game.rootScene.removeChild(game.playbutton);
 	game.rootScene.clearEventListener(enchant.Event.UP_BUTTON_DOWN);
 	// add the background
 
