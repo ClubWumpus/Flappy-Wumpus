@@ -154,7 +154,6 @@ function logoTimer() {
 }
 
 game.onload = function(){
-	logoTimer()
 	game.bg = new Sprite(1280,720);
   game.bg.image = game.assets['assets/halloween/background.png'];
   
@@ -188,6 +187,8 @@ game.onload = function(){
 	game.flappylogo.x = game.width/2 - 225;
 	
 	game.rootScene.addChild(game.flappylogo);
+	logoTimer()
+	
 	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
 	game.flappylogo.addEventListener(Event.ENTER_FRAME, function () {
 		if (logoVariable == false) {
