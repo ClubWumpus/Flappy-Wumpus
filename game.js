@@ -147,7 +147,9 @@ function clearobstacles() {
 
 function gamerestart() {
 	game.rootScene.removeChild(game.retrybutton);
+	game.rootScene.removeChild(game.menubutton);
 	game.rootScene.clearEventListener(enchant.Event.DOWN_BUTTON_DOWN);
+	game.rootScene.clearEventListener(enchant.Event.RIGHT_BUTTON_DOWN);
 	game.gravity = 0.5;
 	game.flap_strength = 9;
 	game.fly_speed = 3.5;
@@ -223,6 +225,46 @@ function gamerestart() {
 	game.rootScene.addChild(game.instructions);
 	
 	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
+}
+
+function openmenu() {
+	game.rootScene.removeChild(game.retrybutton);
+	game.rootScene.removeChild(game.menubutton);
+	game.rootScene.clearEventListener(enchant.Event.DOWN_BUTTON_DOWN);
+	game.rootScene.clearEventListener(enchant.Event.RIGHT_BUTTON_DOWN);
+	game.rootScene.removeChild(game.avatar);
+	game.rootScene.removeChild(game.gameover);
+	game.rootScene.removeChild(scoreBoard);
+	playingTrumpus = false;
+	gameEnded = false;
+	clearobstacles()
+	game.playbutton = new Sprite(300,100);
+	game.playbutton.image = game.assets['assets/play.png'];
+	game.playbutton.y = game.height/2 + 50;
+	game.playbutton.x = game.width/2 - 150;
+	game.playbutton.buttonMode = "up"
+	
+	game.rootScene.addChild(game.playbutton);
+	
+	// adding the logo
+	
+	game.flappylogo = new Sprite(464,206);
+	game.flappylogo.image = game.assets['assets/flappywumpuslogo2.png'];
+	game.flappylogo.y = game.height/2 - 200;
+	game.flappylogo.x = game.width/2 - 225;
+	
+	game.rootScene.addChild(game.flappylogo);
+	logoTimer()
+	
+	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
+	game.flappylogo.addEventListener(Event.ENTER_FRAME, function () {
+		if (logoVariable == false) {
+     game.flappylogo.y--
+		}
+		else {
+			game.flappylogo.y++
+		}
+  });
 }
 
 // Timer for the logo floating animation
@@ -418,6 +460,15 @@ function gameover(){
 	game.retrybutton.buttonMode = "down"
 	
 	game.rootScene.addChild(game.retrybutton);
+	
+	// adding a back2menu button
+	game.menubutton = new Sprite(300,100);
+	game.menubutton.image = game.assets['assets/back2menu.png'];
+	game.menubutton.y = game.height/2 - 50;
+	game.menubutton.x = game.width/2 - 150;
+	game.menubutton.buttonMode = "right"
+	
+	game.rootScene.addChild(game.menubutton);
 
     if (playingTrumpus === true) {
       var deathSound = new Audio('sounds/wrong.mp3')
@@ -436,6 +487,10 @@ function gameover(){
 
   game.rootScene.addEventListener(enchant.Event.DOWN_BUTTON_DOWN,function(){
 		gamerestart()
+    //window.location.reload();
+  });
+	game.rootScene.addEventListener(enchant.Event.RIGHT_BUTTON_DOWN,function(){
+		openmenu()
     //window.location.reload();
   });
 
