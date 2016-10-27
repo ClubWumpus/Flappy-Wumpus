@@ -21,6 +21,14 @@ Not quite black
     
 }
 
+.blurb p{
+    color: #fff;
+    text-align: center;
+    font-family: 'Helvetica', 'Impact', 'Open Sans', 'Arial', 'sans-serif';
+    font-size: 16px;
+    font-weight: 200;
+}
+
 body{
     color: white;
     background:url('img/background.png') center center fixed;
@@ -29,11 +37,13 @@ body{
     overflow-x: hidden;
 }
 
-#enchant-stage {
+div#enchant-stage {
     position: relative !important;
     border: 4px #fff dashed;
     border-radius: 4px;
-    margin: 30px auto 0 auto;
+    margin: auto;
+    top: 0; bottom: 0; left: 0; right: 0;
+   /* margin: 30px auto 0 auto; */
     cursor: url('assets/pointer.ico'), default;
 }
 
