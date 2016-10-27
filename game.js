@@ -131,8 +131,73 @@ function gameinit() {
   // add game.instructions to rootScene
 	game.rootScene.addChild(game.instructions);
 
-  //game.rootScene.addEventListener(enchant.Event.TOUCH_END, game_touched);
   game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
+	
+}
+
+function gamerestart() {
+	scoreBoard.text = "0"
+	game.rootScene.removeChild(obstacles);
+	game.rootScene.clearEventListener(enchant.Event.UP_BUTTON_DOWN);
+	
+	game.rootScene.addChild(obstacles);
+	
+	// add the start game screen
+  game.getready = new Sprite(592,177);
+  game.getready.image = game.assets['assets/halloween/getready.png'];
+  game.getready.x = (game.width / 2) - (game.getready.width / 2);
+  game.getready.y = (game.height / 2) - (game.getready.height / 2);
+
+  // add game.getready to rootScene
+
+	
+	game.rootScene.addChild(game.getready);
+	
+
+	game.flapButton = new Sprite(200,200);
+	game.flapButton.image = game.assets['assets/flap.png'];
+	game.flapButton.x = 1050;
+	game.flapButton.y = 520;
+	game.flapButton.buttonMode = "up"
+	
+	// adds flapButton to the rootScene
+	
+	game.rootScene.addChild(game.flapButton);
+	
+	var randomNumber = Math.random() * 100 + 1;
+  if (randomNumber <= 10) {
+    game.avatar = new Sprite(87,55);
+    game.avatar.image = game.assets['assets/wumpusGolden.png'];
+  } else if (randomNumber <= 20) {
+    game.avatar = new Sprite(87,55);
+    game.avatar.image = game.assets['assets/wumpusRainbow.png'];
+  } else if (randomNumber <= 30) {
+    playingTrumpus = true;
+    game.avatar = new Sprite(87,55);
+    game.avatar.image = game.assets['assets/wumpusTrump.png'];
+  } else if (randomNumber <= 40) {
+    game.avatar = new Sprite(87,85);
+    game.avatar.image = game.assets['assets/mallorySoftSoap.png'];
+  } else {
+    game.avatar = new Sprite(87,55);
+    game.avatar.image = game.assets['assets/wumpusVanilla.png'];
+  }
+
+  game.avatar.x = 100;
+  game.avatar.y = 295;
+  game.avatar.ySpeed = 0;
+  
+
+  // add game.avatar to rootScene
+	game.rootScene.addChild(game.avatar);
+	
+	game.instructions = new Sprite(420,22);
+  game.instructions.image = game.assets['assets/instructions.png'];
+  game.instructions.x = (game.width/2) - (game.instructions.width/2);
+  game.instructions.y = 460;
+	
+	// add game.instructions to rootScene
+	game.rootScene.addChild(game.instructions);
 	
 }
 
@@ -314,6 +379,7 @@ function spawnObstacle(){
 function gameover(){
   // add the instructions
   gameEnded = true;
+	game.rootScene.removeChild(game.flapButton);
   game.gameover = new Sprite(602,163);
   game.gameover.image = game.assets['assets/gameover.png'];
   game.gameover.x = (game.width/2) - (game.gameover.width/2);
