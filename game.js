@@ -97,19 +97,7 @@ function gameinit() {
   // add game.getready to rootScene
 
 	
-	game.rootScene.addChild(game.getready);
-	
-
-	//game.flapButton = new Sprite(200,200);
-	//game.flapButton.image = game.assets['assets/flap.png'];
-	//game.flapButton.x = 1050;
-	//game.flapButton.y = 520;
-	//game.flapButton.buttonMode = "up"
-	
-	// adds flapButton to the rootScene
-	
-	//game.rootScene.addChild(game.flapButton);
-	
+	game.rootScene.addChild(game.getready);	
   
   // add the main character
   // Adds a 10% chance to get special characters :p
@@ -165,14 +153,6 @@ function clearobstacles() {
   }
 }
 
-// animation for flap button
-//function flapAnimation() {
-//	game.flapButton.image = game.assets['assets/flapping.png'];
-//	setTimeout(function() {
-//		game.flapButton.image = game.assets['assets/flap.png'];	
-//	}, 100)
-//}
-
 function gamerestart() {
 	
 	// clearing sprites up
@@ -224,17 +204,6 @@ function gamerestart() {
 
 	
 	game.rootScene.addChild(game.getready);
-	
-
-	game.flapButton = new Sprite(200,200);
-	game.flapButton.image = game.assets['assets/flap.png'];
-	game.flapButton.x = 1050;
-	game.flapButton.y = 520;
-	game.flapButton.buttonMode = "up"
-	
-	// adds flapButton to the rootScene
-	
-	game.rootScene.addChild(game.flapButton);
 	
 	var randomNumber = Math.random() * 100 + 1;
   if (randomNumber <= 10) {
