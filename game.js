@@ -147,7 +147,7 @@ function logoTimer() {
 		}
 		else {
 			logoVariable = false;
-			console.log("hi)
+			console.log("hi")
 			logoTimer()
 		}
 	}, 1000)
