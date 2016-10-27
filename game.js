@@ -143,7 +143,7 @@ function gameinit() {
 
 	setTimeout(function() {
   	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
-	}, 500)
+	}, 1000)
 
 }
 
@@ -246,8 +246,10 @@ function gamerestart() {
 
 	// add game.instructions to rootScene
 	game.rootScene.addChild(game.instructions);
-
-	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
+	
+	setTimeout(function() {
+		game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
+	}, 1000)
 }
 
 function openmenu() {
