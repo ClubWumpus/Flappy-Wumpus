@@ -21,6 +21,14 @@ Not quite black
     
 }
 
+.blurb {
+    color: #fff;
+    text-align: center;
+    font-family: 'Helvetica', 'Impact', 'Open Sans', 'Arial', 'sans-serif';
+    font-size: 16px;
+    font-weight: 200;
+}
+
 body{
     color: white;
     background:url('img/background.png') center center fixed;
