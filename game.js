@@ -203,6 +203,7 @@ function gamerestart() {
 	// add game.instructions to rootScene
 	game.rootScene.addChild(game.instructions);
 	
+	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
 }
 
 // Timer for the logo floating animation
