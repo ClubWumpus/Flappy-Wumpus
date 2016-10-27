@@ -37,8 +37,9 @@ body{
     overflow-x: hidden;
 }
 
-#game-wrapper {
-    margin: 30px auto 0 auto;
+div#game-container {
+    margin: 30px 0 auto;
+    text-align: center;
 }
 
 div#enchant-stage {
