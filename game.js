@@ -156,9 +156,6 @@ function clearobstacles() {
 
 function gamerestart() {
 
-	// setting space keybind
-	game.keybind(32, 'up');
-	
 	// clearing sprites up
 
 	game.rootScene.removeChild(game.bg);
