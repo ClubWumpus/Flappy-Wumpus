@@ -401,7 +401,8 @@ function gameover(){
   game.rootScene.addChild(game.gameover);
 
   game.rootScene.addEventListener(enchant.Event.TOUCH_END,function(){
-    window.location.reload();
+		gamerestart()
+    //window.location.reload();
   });
 
   // stop the game loop
