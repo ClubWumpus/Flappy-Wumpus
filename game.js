@@ -51,7 +51,10 @@ game.preload('assets/halloween/background.png',
 	'assets/wumpusRainbow.png',
 	'assets/wumpusTrump.png',
 	'assets/wumpusVanilla.png',
-	'assets/flap.png');
+	'assets/flap.png',
+	'assets/back2menu.png',
+	'assets/play.png',
+	'assets/flappywumpuslogo.png');
 	
 
 // initialize game
@@ -145,6 +148,13 @@ game.onload = function(){
   
   // add game.ground to rootScene
 	game.rootScene.addChild(game.ground);
+	
+	game.playbutton = new Sprite(300,100);
+	game.playbutton.image = game.assets['assets/play.png'];
+	game.playbutton.y = game.height / 2;
+	game.playbutton.x = game.width / 2;
+	
+	game.rootScene.addChild(game.playbutton);
   
 } // end game.onload #initialize game
 
