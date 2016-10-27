@@ -1,0 +1,39 @@
+/*
+COLORS:
+Blurple
+    Hex: #7289DA, RGB: 114, 137, 218
+Full white
+    Hex: #FFFFFF, RGB: 255,255,255
+Greyple
+    Hex: #99AAB5, RGB: 153, 170, 181
+Dark, but not black
+    Hex: #2C2F33, RGB: 44, 47, 51
+Not quite black
+    Hex: #23272A, RGB: 35, 39, 42
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#bg-audio {
+    
+}
+
+body{
+    background:none transparent;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+div#enchant-stage {
+    position: relative !important;
+    border: 4px #fff dashed;
+    border-radius: 4px; 
+    cursor: url('assets/pointer.ico'), default;
+}
+
+div {
+    transform: scale(1) !important; /*fixes large loading screen*/
+}
