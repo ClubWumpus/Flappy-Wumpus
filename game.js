@@ -136,6 +136,7 @@ function gameinit() {
 }
 
 function gamerestart() {
+	game.rootScene.removeChild(game.gameover);
 	playingTrumpus = false;
 	gameEnded = false;
 	scoreBoard.text = "0";
