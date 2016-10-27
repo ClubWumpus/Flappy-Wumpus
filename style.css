@@ -41,6 +41,11 @@ div {
     transform: scale(1) !important; /*fixes large loading screen*/
 }
 
+scoreBoard {
+    font: 'Comic Sans MS';
+    font-family: 'Comic Sans MS';
+}
+
 #bottom-banner {
     margin: 20px 0;
     width: 100vw;
@@ -76,7 +81,7 @@ footer {
 .footer__inner {
     color: #bbb;
     text-align: center;
-    font-family: 'Helvetica', 'Open Sans', 'Arial', 'sans-serif';
+    font-family: 'Helvetica', 'Impact', 'Open Sans', 'Arial', 'sans-serif';
     font-size: 16px;
     font-weight: 200;
     line-height: 26px;

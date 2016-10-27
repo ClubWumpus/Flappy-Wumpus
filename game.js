@@ -27,7 +27,7 @@ var obstacles = new Group();
 var scoreBoard = new Label();
 scoreBoard.text = 0;
 scoreBoard.color = '#fff';
-scoreBoard.font = 'Open Sans';
+scoreBoard.font = 'Comic Sans MS';
 scoreBoard.scaleX = 5;
 scoreBoard.scaleY = 5;
 scoreBoard.textAlign = 'center';
@@ -50,18 +50,21 @@ game.preload('assets/halloween/background.png',
 	'assets/wumpusGolden.png',
 	'assets/wumpusRainbow.png',
 	'assets/wumpusTrump.png',
-	'assets/wumpusVanilla.png');
+	'assets/wumpusVanilla.png',
+	'assets/flap.png',
+	'assets/back2menu.png',
+	'assets/play.png',
+	'assets/flappywumpuslogo2.png',
+	'assets/retry.png',
+	'assets/flapping.png');
 	
 
 // initialize game
-game.onload = function(){
-
-  // add the background
-  game.bg = new Sprite(1280,720);
-  game.bg.image = game.assets['assets/halloween/background.png'];
-  
-  // add game.bg to rootScene
-	game.rootScene.addChild(game.bg);
+function gameinit() {
+	game.rootScene.removeChild(game.playbutton);
+	game.rootScene.removeChild(game.flappylogo);
+	game.rootScene.clearEventListener(enchant.Event.UP_BUTTON_DOWN);
+	// add the background
 
   // add obstacles to rootScene
 	game.rootScene.addChild(obstacles);
@@ -76,17 +79,22 @@ game.onload = function(){
   game.getready.y = (game.height / 2) - (game.getready.height / 2);
 
   // add game.getready to rootScene
+
+	
 	game.rootScene.addChild(game.getready);
+	
 
-  // add the floor
-  game.ground = new Sprite(1280,86);
-  game.ground.image = game.assets['assets/ground.png'];
-  game.ground.x = 0;
-  game.ground.y = game.height - 48;
+	game.flapButton = new Sprite(200,200);
+	game.flapButton.image = game.assets['assets/flap.png'];
+	game.flapButton.x = 1050;
+	game.flapButton.y = 520;
+	game.flapButton.buttonMode = "up"
+	
+	// adds flapButton to the rootScene
+	
+	game.rootScene.addChild(game.flapButton);
+	
   
-  // add game.ground to rootScene
-	game.rootScene.addChild(game.ground);
-
   // add the main character
   // Adds a 10% chance to get special characters :p
   var randomNumber = Math.random() * 100 + 1;
@@ -125,8 +133,212 @@ game.onload = function(){
   // add game.instructions to rootScene
 	game.rootScene.addChild(game.instructions);
 
-  game.rootScene.addEventListener(enchant.Event.TOUCH_END, game_touched);
   game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
+	
+}
+
+function clearobstacles() {
+	for (var i = 0; i < obstacles.childNodes.length; i++) {
+   	obstacles.removeChild(obstacles.childNodes[i]);
+		if (obstacles.childNodes.length >= 1) {
+				clearobstacles()
+		}
+  }
+}
+
+// animation for flap button
+function flapAnimation() {
+	game.flapButton.image = game.assets['assets/flapping.png'];
+	setTimeout(function() {
+		game.flapButton.image = game.assets['assets/flap.png'];	
+	}, 100)
+}
+
+function gamerestart() {
+	game.rootScene.removeChild(game.retrybutton);
+	game.rootScene.removeChild(game.menubutton);
+	game.rootScene.clearEventListener(enchant.Event.DOWN_BUTTON_DOWN);
+	game.rootScene.clearEventListener(enchant.Event.RIGHT_BUTTON_DOWN);
+	game.gravity = 0.5;
+	game.flap_strength = 9;
+	game.fly_speed = 3.5;
+	game.started = false;
+	clearobstacles()
+	game.rootScene.removeChild(game.avatar);
+	game.rootScene.removeChild(game.gameover);
+	playingTrumpus = false;
+	gameEnded = false;
+	scoreBoard.text = "0";
+	game.rootScene.removeChild(obstacles);
+	game.rootScene.clearEventListener(enchant.Event.UP_BUTTON_DOWN);
+	
+	game.rootScene.addChild(obstacles);
+	
+	// add the start game screen
+  game.getready = new Sprite(592,177);
+  game.getready.image = game.assets['assets/halloween/getready.png'];
+  game.getready.x = (game.width / 2) - (game.getready.width / 2);
+  game.getready.y = (game.height / 2) - (game.getready.height / 2);
+
+  // add game.getready to rootScene
+
+	
+	game.rootScene.addChild(game.getready);
+	
+
+	game.flapButton = new Sprite(200,200);
+	game.flapButton.image = game.assets['assets/flap.png'];
+	game.flapButton.x = 1050;
+	game.flapButton.y = 520;
+	game.flapButton.buttonMode = "up"
+	
+	// adds flapButton to the rootScene
+	
+	game.rootScene.addChild(game.flapButton);
+	
+	var randomNumber = Math.random() * 100 + 1;
+  if (randomNumber <= 10) {
+    game.avatar = new Sprite(87,55);
+    game.avatar.image = game.assets['assets/wumpusGolden.png'];
+  } else if (randomNumber <= 20) {
+    game.avatar = new Sprite(87,55);
+    game.avatar.image = game.assets['assets/wumpusRainbow.png'];
+  } else if (randomNumber <= 30) {
+    playingTrumpus = true;
+    game.avatar = new Sprite(87,55);
+    game.avatar.image = game.assets['assets/wumpusTrump.png'];
+  } else if (randomNumber <= 40) {
+    game.avatar = new Sprite(87,85);
+    game.avatar.image = game.assets['assets/mallorySoftSoap.png'];
+  } else {
+    game.avatar = new Sprite(87,55);
+    game.avatar.image = game.assets['assets/wumpusVanilla.png'];
+  }
+
+  game.avatar.x = 100;
+  game.avatar.y = 295;
+  game.avatar.ySpeed = 0;
+  
+
+  // add game.avatar to rootScene
+	game.rootScene.addChild(game.avatar);
+	
+	game.instructions = new Sprite(420,22);
+  game.instructions.image = game.assets['assets/instructions.png'];
+  game.instructions.x = (game.width/2) - (game.instructions.width/2);
+  game.instructions.y = 460;
+	game.rootScene.removeChild(scoreBoard)
+	game.rootScene.addChild(scoreBoard)
+	
+	// add game.instructions to rootScene
+	game.rootScene.addChild(game.instructions);
+	
+	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
+}
+
+function openmenu() {
+	game.rootScene.removeChild(game.retrybutton);
+	game.rootScene.removeChild(game.menubutton);
+	game.rootScene.clearEventListener(enchant.Event.DOWN_BUTTON_DOWN);
+	game.rootScene.clearEventListener(enchant.Event.RIGHT_BUTTON_DOWN);
+	game.rootScene.removeChild(game.avatar);
+	game.rootScene.removeChild(game.gameover);
+	game.rootScene.removeChild(scoreBoard);
+	playingTrumpus = false;
+	gameEnded = false;
+	clearobstacles()
+	game.playbutton = new Sprite(300,100);
+	game.playbutton.image = game.assets['assets/play.png'];
+	game.playbutton.y = game.height/2 + 50;
+	game.playbutton.x = game.width/2 - 150;
+	game.playbutton.buttonMode = "up"
+	
+	game.rootScene.addChild(game.playbutton);
+	
+	// adding the logo
+	
+	game.flappylogo = new Sprite(464,206);
+	game.flappylogo.image = game.assets['assets/flappywumpuslogo2.png'];
+	game.flappylogo.y = game.height/2 - 200;
+	game.flappylogo.x = game.width/2 - 225;
+	
+	game.rootScene.addChild(game.flappylogo);
+	logoTimer()
+	
+	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
+	game.flappylogo.addEventListener(Event.ENTER_FRAME, function () {
+		if (logoVariable == false) {
+     game.flappylogo.y--
+		}
+		else {
+			game.flappylogo.y++
+		}
+  });
+}
+
+// Timer for the logo floating animation
+
+var logoVariable = false
+
+function logoTimer() {
+	setTimeout(function() {
+		if (logoVariable == false) {
+			logoVariable = true;
+			logoTimer()
+		}
+		else {
+			logoVariable = false;
+			logoTimer()
+		}
+	}, 1000)
+}
+
+game.onload = function(){
+	game.bg = new Sprite(1280,720);
+  game.bg.image = game.assets['assets/halloween/background.png'];
+  
+  // add game.bg to rootScene
+	game.rootScene.addChild(game.bg);
+	
+	// add the floor
+  game.ground = new Sprite(1280,86);
+  game.ground.image = game.assets['assets/ground.png'];
+  game.ground.x = 0;
+  game.ground.y = game.height - 48;
+  
+  // add game.ground to rootScene
+	game.rootScene.addChild(game.ground);
+	
+	// adding playbutton stuff
+	
+	game.playbutton = new Sprite(300,100);
+	game.playbutton.image = game.assets['assets/play.png'];
+	game.playbutton.y = game.height/2 + 50;
+	game.playbutton.x = game.width/2 - 150;
+	game.playbutton.buttonMode = "up"
+	
+	game.rootScene.addChild(game.playbutton);
+	
+	// adding the logo
+	
+	game.flappylogo = new Sprite(464,206);
+	game.flappylogo.image = game.assets['assets/flappywumpuslogo2.png'];
+	game.flappylogo.y = game.height/2 - 200;
+	game.flappylogo.x = game.width/2 - 225;
+	
+	game.rootScene.addChild(game.flappylogo);
+	logoTimer()
+	
+	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
+	game.flappylogo.addEventListener(Event.ENTER_FRAME, function () {
+		if (logoVariable == false) {
+     game.flappylogo.y--
+		}
+		else {
+			game.flappylogo.y++
+		}
+  });
+  
 } // end game.onload #initialize game
 
 // listen for tap/click/up arrow
@@ -138,8 +350,11 @@ function game_touched() {
     // remove getready and instructions
     game.rootScene.removeChild(game.getready);
     game.rootScene.removeChild(game.instructions);
+	
 }
+		
       game.avatar.ySpeed = -game.flap_strength;
+	flapAnimation()
       if(gameEnded == false) {
 
         if (playingTrumpus === true) {
@@ -154,7 +369,7 @@ function game_touched() {
 
 // game loop
 game.onenterframe = function(){
-  if(game.started){
+  if(gameEnded == false && game.started == true){
     game.avatar.ySpeed += game.gravity;
     game.avatar.y += game.avatar.ySpeed;
 
@@ -179,7 +394,8 @@ game.onenterframe = function(){
     if(game.distance % game.obstacle_frequency == 0){
       
       // spawn obstacle
-      spawnObstacle();
+      spawnObstacle()
+    game.started = true;
       
       // clean up old obstacles
       for (var i = 0; i < obstacles.childNodes.length; i++) {
@@ -239,10 +455,30 @@ function spawnObstacle(){
 function gameover(){
   // add the instructions
   gameEnded = true;
+	game.started = false;
+	game.rootScene.removeChild(game.flapButton);
   game.gameover = new Sprite(602,163);
   game.gameover.image = game.assets['assets/gameover.png'];
   game.gameover.x = (game.width/2) - (game.gameover.width/2);
   game.gameover.y = 120;
+	
+	// adding a retry button
+	game.retrybutton = new Sprite(300,100);
+	game.retrybutton.image = game.assets['assets/retry.png'];
+	game.retrybutton.y = game.height/2 + 50;
+	game.retrybutton.x = game.width/2 - 150;
+	game.retrybutton.buttonMode = "down"
+	
+	game.rootScene.addChild(game.retrybutton);
+	
+	// adding a back2menu button
+	game.menubutton = new Sprite(300,100);
+	game.menubutton.image = game.assets['assets/back2menu.png'];
+	game.menubutton.y = game.height/2 - 50;
+	game.menubutton.x = game.width/2 - 150;
+	game.menubutton.buttonMode = "right"
+	
+	game.rootScene.addChild(game.menubutton);
 
     if (playingTrumpus === true) {
       var deathSound = new Audio('sounds/wrong.mp3')
@@ -259,12 +495,17 @@ function gameover(){
   // show gameover graphic
   game.rootScene.addChild(game.gameover);
 
-  game.rootScene.addEventListener(enchant.Event.TOUCH_END,function(){
-    window.location.reload();
+  game.rootScene.addEventListener(enchant.Event.DOWN_BUTTON_DOWN,function(){
+		gamerestart()
+    //window.location.reload();
+  });
+	game.rootScene.addEventListener(enchant.Event.RIGHT_BUTTON_DOWN,function(){
+		openmenu()
+    //window.location.reload();
   });
 
   // stop the game loop
-  game.onenterframe = null;
+  //game.onenterframe = null;
 
 }
 
