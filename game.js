@@ -416,7 +416,7 @@ function gameover(){
 	game.retrybutton.x = game.width/2 - 150;
 	game.retrybutton.buttonMode = "down"
 	
-	game.rootScene.addChild(game.playbutton);
+	game.rootScene.addChild(game.retrybutton);
 
     if (playingTrumpus === true) {
       var deathSound = new Audio('sounds/wrong.mp3')
