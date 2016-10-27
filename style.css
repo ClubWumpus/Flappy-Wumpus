@@ -41,7 +41,7 @@ body{
     position: relative !important;
     border: 4px #fff dashed;
     border-radius: 4px;
-    margin: 30px auto 0 auto;
+   /* margin: 30px auto 0 auto; */
     cursor: url('assets/pointer.ico'), default;
 }
 
