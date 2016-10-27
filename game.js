@@ -61,6 +61,7 @@ game.preload('assets/halloween/background.png',
 
 // initialize game
 function gameinit() {
+	scoreBoard.text = 0;
 	game.rootScene.removeChild(game.playbutton);
 	game.rootScene.removeChild(game.flappylogo);
 	game.rootScene.clearEventListener(enchant.Event.UP_BUTTON_DOWN);
