@@ -18,5 +18,11 @@ var backgroundAudio=new Audio('sounds/FlappilyWumped.mp3');
 backgroundAudio.autoplay = true;
 backgroundAudio.loop = true;
 backgroundAudio.volume=0.5;
+	
+var iframeID = document.getElementById("modalIFrame"); 
+//focus the IFRAME element 
+$(iframeID).focus(); 
+//use JQuery to find the control in the IFRAME and set focus 
+$(iframeID).contents().find("#game-wrapper").focus(); 
 
 });
