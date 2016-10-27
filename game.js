@@ -55,14 +55,8 @@ game.preload('assets/halloween/background.png',
 	
 
 // initialize game
-game.onload = function(){
-
-  // add the background
-  game.bg = new Sprite(1280,720);
-  game.bg.image = game.assets['assets/halloween/background.png'];
-  
-  // add game.bg to rootScene
-	game.rootScene.addChild(game.bg);
+function gameinit() {
+	// add the background
 
   // add obstacles to rootScene
 	game.rootScene.addChild(obstacles);
@@ -77,15 +71,6 @@ game.onload = function(){
   game.getready.y = (game.height / 2) - (game.getready.height / 2);
 
   // add game.getready to rootScene
-	
-	// add the floor
-  game.ground = new Sprite(1280,86);
-  game.ground.image = game.assets['assets/ground.png'];
-  game.ground.x = 0;
-  game.ground.y = game.height - 48;
-  
-  // add game.ground to rootScene
-	game.rootScene.addChild(game.ground);
 
 	
 	game.rootScene.addChild(game.getready);
@@ -143,6 +128,24 @@ game.onload = function(){
   //game.rootScene.addEventListener(enchant.Event.TOUCH_END, game_touched);
   game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
 	
+}
+
+game.onload = function(){
+	game.bg = new Sprite(1280,720);
+  game.bg.image = game.assets['assets/halloween/background.png'];
+  
+  // add game.bg to rootScene
+	game.rootScene.addChild(game.bg);
+	
+	// add the floor
+  game.ground = new Sprite(1280,86);
+  game.ground.image = game.assets['assets/ground.png'];
+  game.ground.x = 0;
+  game.ground.y = game.height - 48;
+  
+  // add game.ground to rootScene
+	game.rootScene.addChild(game.ground);
+  
 } // end game.onload #initialize game
 
 // listen for tap/click/up arrow
