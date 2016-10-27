@@ -151,7 +151,7 @@ function flapAnimation() {
 	game.flapButton.image = game.assets['assets/flapping.png'];
 	setTimeout(function() {
 		game.flapButton.image = game.assets['assets/flap.png'];	
-	}, 500)
+	}, 100)
 }
 
 function gamerestart() {
