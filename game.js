@@ -476,7 +476,7 @@ function spawnObstacle(){
   top.image = game.assets['assets/obstacle_top.png'];
   top.x = -obstacles.x + game.width;
   top.y = -550 + pos - gap;
-	top.buttonMode == "up"
+	top.buttonMode = "up"
   // add top obstacle to obstacles group
   obstacles.addChild(top);
 
@@ -484,11 +484,11 @@ function spawnObstacle(){
   bottom.image = game.assets['assets/obstacle_bottom.png'];
   bottom.x = -obstacles.x + game.width;
   bottom.y = pos;
-	bottom.buttonMode == "up";
+	bottom.buttonMode = "up";
   
   // add bottom obstacle to obstacles group
   obstacles.addChild(bottom);
-	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
+	//game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
   
 } // end spawnObstacle
 
