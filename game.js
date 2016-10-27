@@ -142,6 +142,7 @@ function clearobstacles() {
 }
 
 function gamerestart() {
+	game.rootScene.clearEventListener(enchant.Event.TOUCH_END)
 	game.gravity = 0.5;
 	game.flap_strength = 9;
 	game.fly_speed = 3.5;
