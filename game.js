@@ -91,6 +91,9 @@ function gameinit() {
   game.getready.x = (game.width / 2) - (game.getready.width / 2);
   game.getready.y = (game.height / 2) - (game.getready.height / 2);
 	game.getready.buttonMode = "up"
+	
+	// binds space to up
+	game.keybind(32, 'space');
 
   // add game.getready to rootScene
 
@@ -197,6 +200,9 @@ function gamerestart() {
   game.getready.x = (game.width / 2) - (game.getready.width / 2);
   game.getready.y = (game.height / 2) - (game.getready.height / 2);
 	game.getready.buttonMode = "up"
+	
+	// binds space to up
+	game.keybind(32, 'space');
 
   // add game.getready to rootScene
 
@@ -474,6 +480,9 @@ function spawnObstacle(){
 } // end spawnObstacle
 
 function gameover(){
+	// removes keybind
+	game.keyunbind(32)
+	
   // add the instructions
 	game.bg.buttonMode = "";
   gameEnded = true;
