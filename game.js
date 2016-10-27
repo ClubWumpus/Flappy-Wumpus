@@ -135,7 +135,14 @@ function gameinit() {
 	
 }
 
+function clearobstacles() {
+	for (var i = 0; i < obstacles.childNodes.length; i++) {
+     obstacles.removeChild(obstacles.childNodes[i]);
+  }
+}
+
 function gamerestart() {
+	clearobstacles()
 	game.rootScene.removeChild(game.avatar);
 	game.rootScene.removeChild(game.gameover);
 	playingTrumpus = false;
@@ -329,7 +336,6 @@ game.onenterframe = function(){
       // clean up old obstacles
       for (var i = 0; i < obstacles.childNodes.length; i++) {
         if(obstacles.childNodes[i].x + obstacles.x + 100 < -85){
-					console.log("removed")
           obstacles.removeChild(obstacles.childNodes[i]);
         }
       }
