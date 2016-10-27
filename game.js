@@ -136,18 +136,18 @@ function gameinit() {
 	
 }
 
+// Timer for the logo floating animation
+
 var logoVariable = false
 
 function logoTimer() {
 	setTimeout(function() {
 		if (logoVariable == false) {
 			logoVariable = true;
-			console.log("hi")
 			logoTimer()
 		}
 		else {
 			logoVariable = false;
-			console.log("hi")
 			logoTimer()
 		}
 	}, 1000)
