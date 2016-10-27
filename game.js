@@ -263,7 +263,6 @@ function openmenu() {
 	game.flappylogo.x = game.width/2 - 225;
 	
 	game.rootScene.addChild(game.flappylogo);
-	logoTimer()
 	
 	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, gameinit);
 	game.flappylogo.addEventListener(Event.ENTER_FRAME, function () {
