@@ -46,7 +46,7 @@ game.preload('../assets/halloween/background.png',
 	'../assets/gameover.png',
 	'../assets/halloween/getready.png',
 	'../assets/ground.png',
-	'../assets/instructions.png',
+	'../assets/new-new-instructions.png',
 	'../assets/mallorySoftSoap.png',
 	'../assets/obstacle_top.png',
 	'../assets/obstacle_bottom.png',
@@ -131,10 +131,10 @@ function gameinit() {
 	game.rootScene.addChild(game.avatar);
 
   // add the instructions
-  game.instructions = new Sprite(475,22);
-  game.instructions.image = game.assets['../assets/instructions.png'];
+  game.instructions = new Sprite(695,95);
+  game.instructions.image = game.assets['../assets/new-instructions.png'];
   game.instructions.x = (game.width/2) - (game.instructions.width/2);
-  game.instructions.y = 460;
+  game.instructions.y = 200;
 	game.instructions.buttonMode = "up";
 
 	game.bg.buttonMode = "up";
@@ -236,10 +236,10 @@ function gamerestart() {
   // add game.avatar to rootScene
 	game.rootScene.addChild(game.avatar);
 
-	game.instructions = new Sprite(475,22);
+	game.instructions = new Sprite(695,95);
   game.instructions.image = game.assets['../assets/instructions.png'];
   game.instructions.x = (game.width/2) - (game.instructions.width/2);
-  game.instructions.y = 460;
+  game.instructions.y = 200;
 	game.instructions.buttonMode = "up"
 	game.rootScene.removeChild(scoreBoard)
 	game.rootScene.addChild(scoreBoard)
