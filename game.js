@@ -131,7 +131,7 @@ function gameinit() {
 	game.rootScene.addChild(game.avatar);
 
   // add the instructions
-  game.instructions = new Sprite(420,22);
+  game.instructions = new Sprite(475,22);
   game.instructions.image = game.assets['../assets/instructions.png'];
   game.instructions.x = (game.width/2) - (game.instructions.width/2);
   game.instructions.y = 460;
@@ -236,7 +236,7 @@ function gamerestart() {
   // add game.avatar to rootScene
 	game.rootScene.addChild(game.avatar);
 
-	game.instructions = new Sprite(420,22);
+	game.instructions = new Sprite(475,22);
   game.instructions.image = game.assets['../assets/instructions.png'];
   game.instructions.x = (game.width/2) - (game.instructions.width/2);
   game.instructions.y = 460;
