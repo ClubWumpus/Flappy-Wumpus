@@ -256,6 +256,7 @@ function openmenu() {
 	game.rootScene.removeChild(game.retrybutton);
 	game.rootScene.removeChild(game.menubutton);
 	game.rootScene.clearEventListener(enchant.Event.DOWN_BUTTON_DOWN);
+	game.rootScene.clearEventListener(enchant.Event.UP_BUTTON_DOWN);
 	game.rootScene.clearEventListener(enchant.Event.RIGHT_BUTTON_DOWN);
 	game.rootScene.removeChild(game.avatar);
 	game.rootScene.removeChild(game.gameover);
