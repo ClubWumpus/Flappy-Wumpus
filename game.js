@@ -134,7 +134,7 @@ function gameinit() {
   game.instructions = new Sprite(695,95);
   game.instructions.image = game.assets['../assets/new-instructions.png'];
   game.instructions.x = (game.width/2) - (game.instructions.width/2);
-  game.instructions.y = 200;
+  game.instructions.y = 500;
 	game.instructions.buttonMode = "up";
 
 	game.bg.buttonMode = "up";
@@ -239,7 +239,7 @@ function gamerestart() {
 	game.instructions = new Sprite(695,95);
   game.instructions.image = game.assets['../assets/instructions.png'];
   game.instructions.x = (game.width/2) - (game.instructions.width/2);
-  game.instructions.y = 200;
+  game.instructions.y = 500;
 	game.instructions.buttonMode = "up"
 	game.rootScene.removeChild(scoreBoard)
 	game.rootScene.addChild(scoreBoard)
