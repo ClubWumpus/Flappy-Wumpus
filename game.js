@@ -25,6 +25,15 @@ game.obstacle_frequency = 50;
 // binding
 game.keybind(32, 'up');
 
+//music
+var menuMusic = new Audio('../sounds/wumpus.mp3');
+menuMusic.loop = true;
+menuMusic.volume=0.5;
+
+var ingameMusic = new Audio('../sounds/FlappilyWumped.mp3');
+menuMusic.loop = true;
+menuMusic.volume=0.5;
+
 var obstacles = new Group();
 
 var scoreBoard = new Label();
@@ -62,7 +71,10 @@ game.preload('../assets/halloween/background.png',
 
 // initialize game
 function gameinit() {
-	console.log("hi")
+	console.log("hi");
+	menuMusic.pause();
+	menuMusic.currentTime = 0;
+	ingameMusic.play();
 	game.rootScene.addChild(game.ground);
 	scoreBoard.text = 0;
 	game.rootScene.removeChild(game.playbutton);
@@ -122,19 +134,18 @@ function gameinit() {
     game.avatar.image = game.assets['../assets/wumpusVanilla.png'];
   }
 
-  game.avatar.x = 100;
-  game.avatar.y = 295;
-  game.avatar.ySpeed = 0;
+    game.avatar.x = 100;
+    game.avatar.y = 295;
+    game.avatar.ySpeed = 0;
 
-
-  // add game.avatar to rootScene
+    // add game.avatar to rootScene
 	game.rootScene.addChild(game.avatar);
 
-  // add the instructions
-  game.instructions = new Sprite(695,95);
-  game.instructions.image = game.assets['../assets/new-instructions.png'];
-  game.instructions.x = (game.width/2) - (game.instructions.width/2);
-  game.instructions.y = 555;
+    // add the instructions
+    game.instructions = new Sprite(695,95);
+    game.instructions.image = game.assets['../assets/new-instructions.png'];
+    game.instructions.x = (game.width/2) - (game.instructions.width/2);
+    game.instructions.y = 555;
 	game.instructions.buttonMode = "up";
 
 	game.bg.buttonMode = "up";
@@ -143,7 +154,6 @@ function gameinit() {
 	game.rootScene.addChild(game.instructions);
 
   	game.rootScene.addEventListener(enchant.Event.UP_BUTTON_DOWN, game_touched);
-
 }
 
 function clearobstacles() {
@@ -152,13 +162,15 @@ function clearobstacles() {
 		if (obstacles.childNodes.length >= 1) {
 				clearobstacles()
 		}
-  }
+    }
 }
 
 function gamerestart() {
-
+	//music
+	menuMusic.pause();
+	menuMusic.currentTime = 0;
+	ingameMusic.play();
 	// clearing sprites up
-
 	game.rootScene.removeChild(game.bg);
 	game.rootScene.removeChild(game.playbutton);
 	game.rootScene.removeChild(game.flappylogo);
@@ -197,14 +209,14 @@ function gamerestart() {
   	// add game.ground to rootScene
 	game.rootScene.addChild(game.ground);
 	// add the start game screen
-  game.getready = new Sprite(592,177);
-  game.getready.image = game.assets['../assets/halloween/getready.png'];
-  game.getready.x = (game.width / 2) - (game.getready.width / 2);
-  game.getready.y = (game.height / 2) - (game.getready.height / 2);
+    game.getready = new Sprite(592,177);
+    game.getready.image = game.assets['../assets/halloween/getready.png'];
+    game.getready.x = (game.width / 2) - (game.getready.width / 2);
+    game.getready.y = (game.height / 2) - (game.getready.height / 2);
 	game.getready.buttonMode = "up"
 	
 
-  // add game.getready to rootScene
+    // add game.getready to rootScene
 
 
 	game.rootScene.addChild(game.getready);
@@ -237,9 +249,9 @@ function gamerestart() {
 	game.rootScene.addChild(game.avatar);
 
 	game.instructions = new Sprite(695,95);
-  game.instructions.image = game.assets['../assets/new-instructions.png'];
-  game.instructions.x = (game.width/2) - (game.instructions.width/2);
-  game.instructions.y = 555;
+    game.instructions.image = game.assets['../assets/new-instructions.png'];
+    game.instructions.x = (game.width/2) - (game.instructions.width/2);
+    game.instructions.y = 555;
 	game.instructions.buttonMode = "up"
 	game.rootScene.removeChild(scoreBoard)
 	game.rootScene.addChild(scoreBoard)
@@ -251,6 +263,9 @@ function gamerestart() {
 }
 
 function openmenu() {
+	ingameMusic.pause();
+	ingameMusic.currentTime = 0;
+	menuMusic.play();
 	game.rootScene.removeChild(game.playbutton);
 	game.rootScene.removeChild(game.flappylogo);
 	game.rootScene.removeChild(game.retrybutton);
@@ -264,6 +279,7 @@ function openmenu() {
 	playingTrumpus = false;
 	gameEnded = false;
 	clearobstacles()
+
 	game.playbutton = new Sprite(300,100);
 	game.playbutton.image = game.assets['../assets/play.png'];
 	game.playbutton.y = game.height/2 + 50;
@@ -315,17 +331,18 @@ function logoTimer() {
 }
 
 game.onload = function(){
+	menuMusic.play();
 	game.bg = new Sprite(1280,720);
-  game.bg.image = game.assets['../assets/halloween/background.png'];
+  	game.bg.image = game.assets['../assets/halloween/background.png'];
 
   // add game.bg to rootScene
 	game.rootScene.addChild(game.bg);
 
 	// add the floor
-  game.ground = new Sprite(1280,86);
-  game.ground.image = game.assets['../assets/ground.png'];
-  game.ground.x = 0;
-  game.ground.y = game.height - 48;
+	game.ground = new Sprite(1280,86);
+	game.ground.image = game.assets['../assets/ground.png'];
+	game.ground.x = 0;
+	game.ground.y = game.height - 48;
 
   // add game.ground to rootScene
 	game.rootScene.addChild(game.ground);
