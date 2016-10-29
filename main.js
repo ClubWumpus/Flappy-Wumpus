@@ -12,12 +12,6 @@ var bannerArray = [
 var selectBanner = bannerArray[Math.floor(Math.random()*bannerArray.length)];
 
 $('#bottom-banner__inner').html('<a target="_blank" href="' + selectBanner.url + '"><img src="' + selectBanner.banner + '" alt="Random Banner" /></a>');
-
-// Adding background audio + reducing volume
-var backgroundAudio=new Audio('sounds/FlappilyWumped.mp3');
-backgroundAudio.autoplay = true;
-backgroundAudio.loop = true;
-backgroundAudio.volume=0.5;
 	
 var iframeID = document.getElementById("modalIFrame"); 
 //focus the IFRAME element 
