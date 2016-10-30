@@ -54,15 +54,9 @@ div {
     transform: scale(1) !important; /*fixes large loading screen*/
 }
 
-scoreBoard {
-    font: 'Comic Sans MS';
-    font-family: 'Comic Sans MS';
-}
-
 #bottom-banner {
     margin: 20px 0;
     width: 100vw;
-    z-index: 100;
 }
 
 #bottom-banner__inner {
@@ -100,10 +94,6 @@ footer {
     line-height: 26px;
 }
 
-.footer__inner a img {
-    margin-top: 15px;
-}
-
 .footer__inner a {
     text-decoration: none;
     color: #eee;
@@ -112,4 +102,8 @@ footer {
 
 .footer__inner a:hover {
     color: #7289DA;
+}
+
+.footer__inner a img {
+    margin-top: 15px;
 }
