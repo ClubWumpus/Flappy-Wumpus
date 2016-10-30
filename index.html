@@ -26,31 +26,12 @@
 
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="http://cdn.jsdelivr.net/vue/2.0.3/vue.js"></script>
-
     <script src="main.js"></script>
     <div id="game-container">
       <iframe src="game/index.html" allowtransparency="true" width="1288px" height="728px" frameBorder="0" onload="this.contentWindow.focus()"></iframe>
-
-        <div id="svg-example" style="padding-top:20px;">
-
-        </div>
-        <div id="sound-control">
-            <div class="blurb"><p>Music Control:</p></div>
-            <input type="range" v-model="sound_control">
-            <button type="button" @click="sound_control=0;toggleAudio()" v-if="playing">
-                Mute Music
-            </button>
-            <button type="button" @click="sound_control=50;toggleAudio()" v-else>
-                Play Music
-            </button>
-        </div>
-
     </div>
-
-
-
     <div id="bottom-banner">
+	<div class="blurb"><p>Pro-Tip: Use UP Arrow Key to flap.</p></div>
         <div id="bottom-banner__inner">
         </div>
     </div>
