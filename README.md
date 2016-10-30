@@ -1,5 +1,5 @@
 # Flappy-Wumpus
-A bad game about a dead meme.
+A bad game about a dead meme. https://flappy.clubwump.us/
 
 Created by [A Generic Gamer](https://twitter.com/SlightlyGeneric).
 

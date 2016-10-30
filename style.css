@@ -1,0 +1,115 @@
+/*
+COLORS:
+Blurple
+    Hex: #7289DA, RGB: 114, 137, 218
+Full white
+    Hex: #FFFFFF, RGB: 255,255,255
+Greyple
+    Hex: #99AAB5, RGB: 153, 170, 181
+Dark, but not black
+    Hex: #2C2F33, RGB: 44, 47, 51
+Not quite black
+    Hex: #23272A, RGB: 35, 39, 42
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#bg-audio {
+    
+}
+
+.blurb p{
+    color: #fff;
+    text-align: center;
+    font-family: 'Helvetica', 'Impact', 'Open Sans', 'Arial', 'sans-serif';
+    font-size: 16px;
+    font-weight: 200;
+}
+
+body{
+    color: white;
+    background:url('img/background.png') center center fixed;
+    background-size: cover;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+div#game-container {
+    margin: 30px 0 auto;
+    text-align: center;
+}
+
+div#enchant-stage {
+    position: relative !important;
+    border: 4px #fff dashed;
+    border-radius: 4px; 
+   /* margin: 30px auto 0 auto; */
+    cursor: url('assets/pointer.ico'), default;
+}
+
+div {
+    transform: scale(1) !important; /*fixes large loading screen*/
+}
+
+scoreBoard {
+    font: 'Comic Sans MS';
+    font-family: 'Comic Sans MS';
+}
+
+#bottom-banner {
+    margin: 20px 0;
+    width: 100vw;
+    z-index: 100;
+}
+
+#bottom-banner__inner {
+    width: 994px;
+    margin: 0 auto;
+}
+
+@keyframes wiggle {
+    0% {transform: rotate(0deg);}
+    20% {transform: rotate(-2deg);}
+    40% {transform: rotate(2deg);}
+    60% {transform: rotate(-2deg);}
+    80% {transform: rotate(2deg);}
+    100% {transform: rotate(0deg);}
+}
+
+#bottom-banner__inner a img:hover {
+    animation: wiggle 0.5s;
+}
+
+footer {
+    padding-top: 10px;
+    width: 100vw;
+    height: 130px;
+    background-color: #23272A;
+    border-top: 2px #6e7173 dashed;
+}
+
+.footer__inner {
+    color: #bbb;
+    text-align: center;
+    font-family: 'Helvetica', 'Impact', 'Open Sans', 'Arial', 'sans-serif';
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 26px;
+}
+
+.footer__inner a img {
+    margin-top: 15px;
+}
+
+.footer__inner a {
+    text-decoration: none;
+    color: #eee;
+    transition: all 0.2s linear;
+}
+
+.footer__inner a:hover {
+    color: #7289DA;
+}
