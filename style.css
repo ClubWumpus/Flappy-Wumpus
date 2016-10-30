@@ -50,13 +50,6 @@ div#enchant-stage {
     cursor: url('assets/pointer.ico'), default;
 }
 
-#sound-control{
-    border: 4px #fff dashed;
-    padding: 8px;
-    margin:8px auto;
-    width:300px;
-}
-
 div {
     transform: scale(1) !important; /*fixes large loading screen*/
 }
