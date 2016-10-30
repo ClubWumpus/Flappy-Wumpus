@@ -21,102 +21,19 @@ Not quite black
     
 }
 
-.blurb p{
-    color: #fff;
-    text-align: center;
-    font-family: 'Helvetica', 'Impact', 'Open Sans', 'Arial', 'sans-serif';
-    font-size: 16px;
-    font-weight: 200;
-}
-
 body{
-    color: white;
-    background:url('img/background.png') center center fixed;
-    background-size: cover;
+    background:none transparent;
     width: 100vw;
     overflow-x: hidden;
-}
-
-div#game-container {
-    margin: 30px 0 auto;
-    text-align: center;
 }
 
 div#enchant-stage {
     position: relative !important;
     border: 4px #fff dashed;
     border-radius: 4px; 
-   /* margin: 30px auto 0 auto; */
     cursor: url('assets/pointer.ico'), default;
-}
-
-#sound-control{
-    border: 4px #fff dashed;
-    padding: 8px;
-    margin:8px auto;
-    width:300px;
 }
 
 div {
     transform: scale(1) !important; /*fixes large loading screen*/
-}
-
-scoreBoard {
-    font: 'Comic Sans MS';
-    font-family: 'Comic Sans MS';
-}
-
-#bottom-banner {
-    margin: 20px 0;
-    width: 100vw;
-    z-index: 100;
-}
-
-#bottom-banner__inner {
-    width: 994px;
-    margin: 0 auto;
-}
-
-@keyframes wiggle {
-    0% {transform: rotate(0deg);}
-    20% {transform: rotate(-2deg);}
-    40% {transform: rotate(2deg);}
-    60% {transform: rotate(-2deg);}
-    80% {transform: rotate(2deg);}
-    100% {transform: rotate(0deg);}
-}
-
-#bottom-banner__inner a img:hover {
-    animation: wiggle 0.5s;
-}
-
-footer {
-    padding-top: 10px;
-    width: 100vw;
-    height: 130px;
-    background-color: #23272A;
-    border-top: 2px #6e7173 dashed;
-}
-
-.footer__inner {
-    color: #bbb;
-    text-align: center;
-    font-family: 'Helvetica', 'Impact', 'Open Sans', 'Arial', 'sans-serif';
-    font-size: 16px;
-    font-weight: 200;
-    line-height: 26px;
-}
-
-.footer__inner a img {
-    margin-top: 15px;
-}
-
-.footer__inner a {
-    text-decoration: none;
-    color: #eee;
-    transition: all 0.2s linear;
-}
-
-.footer__inner a:hover {
-    color: #7289DA;
 }
