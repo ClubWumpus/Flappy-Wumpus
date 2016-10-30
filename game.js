@@ -28,11 +28,11 @@ game.keybind(32, 'up');
 //music
 var menuMusic = new Audio('../sounds/wumpus.mp3');
 menuMusic.loop = true;
-menuMusic.volume=0.5;
+menuMusic.volume = 0.4;
 
 var ingameMusic = new Audio('../sounds/FlappilyWumped.mp3');
-menuMusic.loop = true;
-menuMusic.volume=0.5;
+ingameMusic.loop = true;
+ingameMusic.volume = 0.6;
 
 var obstacles = new Group();
 
@@ -536,7 +536,7 @@ function gameover(){
     deathSound.play();
 
     var gameOverSound = new Audio('../sounds/game-over.mp3');
-    gameOverSound.volume = 0.5;
+    gameOverSound.volume = 0.3;
     gameOverSound.play();
 
   // show gameover graphic
