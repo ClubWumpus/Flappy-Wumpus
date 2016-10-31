@@ -103,7 +103,7 @@ function gameinit() {
 
   // add the start game screen
   game.getready = new Sprite(592,177);
-  game.getready.image = game.assets['../assets/halloween/getready.png'];
+  game.getready.image = game.assets['../assets/getready.png'];
   game.getready.x = (game.width / 2) - (game.getready.width / 2);
   game.getready.y = (game.height / 2) - (game.getready.height / 2);
 	game.getready.buttonMode = "up"
@@ -210,7 +210,7 @@ function gamerestart() {
 	game.rootScene.addChild(game.ground);
 	// add the start game screen
     game.getready = new Sprite(592,177);
-    game.getready.image = game.assets['../assets/halloween/getready.png'];
+    game.getready.image = game.assets['../assets/getready.png'];
     game.getready.x = (game.width / 2) - (game.getready.width / 2);
     game.getready.y = (game.height / 2) - (game.getready.height / 2);
 	game.getready.buttonMode = "up"
@@ -333,7 +333,7 @@ function logoTimer() {
 game.onload = function(){
 	menuMusic.play();
 	game.bg = new Sprite(1280,720);
-  	game.bg.image = game.assets['../assets/halloween/background.png'];
+  	game.bg.image = game.assets['../assets/background.png'];
 
   // add game.bg to rootScene
 	game.rootScene.addChild(game.bg);
