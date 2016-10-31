@@ -50,10 +50,10 @@ var playingTrumpus = false;
 var gameEnded = false;
 
 // preload assets
-game.preload('../assets/halloween/background.png',
+game.preload('../assets/background.png',
 	'../assets/blurple-vigenette.png',
 	'../assets/gameover.png',
-	'../assets/halloween/getready.png',
+	'../assets/getready.png',
 	'../assets/ground.png',
 	'../assets/instructions.png',
 	'../assets/mallorySoftSoap.png',
