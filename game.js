@@ -46,23 +46,21 @@ scoreBoard.textAlign = 'center';
 scoreBoard.x = game.width/2 - scoreBoard.width/2;
 scoreBoard.y = 40;
 
-var playingTrumpus = false;
 var gameEnded = false;
 
 // preload assets
-game.preload('../assets/background.png',
-	'../assets/blurple-vigenette.png',
+game.preload(
+	'../assets/background.png',
 	'../assets/gameover.png',
 	'../assets/getready.png',
 	'../assets/ground.png',
 	'../assets/instructions.png',
-	'../assets/mallorySoftSoap.png',
 	'../assets/obstacle_top.png',
 	'../assets/obstacle_bottom.png',
-	'../assets/wumpusGolden.png',
-	'../assets/wumpusRainbow.png',
-	'../assets/wumpusTrump.png',
-	'../assets/wumpusVanilla.png',
+	'../assets/WumpusBlurple.png',
+	'../assets/WumpusGreen.png',
+	'../assets/WumpusPurple.png',
+	'../assets/WumpusRainbow.png',
 	'../assets/back2menu.png',
 	'../assets/play.png',
 	'../assets/flappywumpuslogo2.png',
@@ -113,25 +111,20 @@ function gameinit() {
 
 	game.rootScene.addChild(game.getready);
 
-  // add the main character
-  // Adds a 10% chance to get special characters :p
+  //Randomly chooses one of the 4 available characters and adds it as the game avatar
   var randomNumber = Math.random() * 100 + 1;
-  if (randomNumber <= 10) {
-    game.avatar = new Sprite(87,55);
-    game.avatar.image = game.assets['../assets/wumpusGolden.png'];
-  } else if (randomNumber <= 20) {
-    game.avatar = new Sprite(87,55);
-    game.avatar.image = game.assets['../assets/wumpusRainbow.png'];
-  } else if (randomNumber <= 30) {
-    playingTrumpus = true;
-    game.avatar = new Sprite(87,55);
-    game.avatar.image = game.assets['../assets/wumpusTrump.png'];
-  } else if (randomNumber <= 40) {
-    game.avatar = new Sprite(87,85);
-    game.avatar.image = game.assets['../assets/mallorySoftSoap.png'];
+  if (randomNumber <= 25) {
+    game.avatar = new Sprite(90,79);
+    game.avatar.image = game.assets['../assets/WumpusBlurple.png'];
+  } else if (randomNumber <= 50) {
+    game.avatar = new Sprite(90,79);
+    game.avatar.image = game.assets['../assets/WumpusGreen.png'];
+  } else if (randomNumber <= 75) {
+    game.avatar = new Sprite(90,79);
+    game.avatar.image = game.assets['../assets/WumpusPurple.png'];
   } else {
-    game.avatar = new Sprite(87,55);
-    game.avatar.image = game.assets['../assets/wumpusVanilla.png'];
+    game.avatar = new Sprite(90,79);
+    game.avatar.image = game.assets['../assets/WumpusRainbow.png'];
   }
 
     game.avatar.x = 100;
@@ -189,7 +182,6 @@ function gamerestart() {
 	clearobstacles()
 	game.rootScene.removeChild(game.avatar);
 	game.rootScene.removeChild(game.gameover);
-	playingTrumpus = false;
 	gameEnded = false;
 	scoreBoard.text = "0";
 	game.rootScene.removeChild(obstacles);
@@ -218,26 +210,22 @@ function gamerestart() {
 
     // add game.getready to rootScene
 
-
 	game.rootScene.addChild(game.getready);
 
-	var randomNumber = Math.random() * 100 + 1;
-  if (randomNumber <= 10) {
-    game.avatar = new Sprite(87,55);
-    game.avatar.image = game.assets['../assets/wumpusGolden.png'];
-  } else if (randomNumber <= 20) {
-    game.avatar = new Sprite(87,55);
-    game.avatar.image = game.assets['../assets/wumpusRainbow.png'];
-  } else if (randomNumber <= 30) {
-    playingTrumpus = true;
-    game.avatar = new Sprite(87,55);
-    game.avatar.image = game.assets['../assets/wumpusTrump.png'];
-  } else if (randomNumber <= 40) {
-    game.avatar = new Sprite(87,85);
-    game.avatar.image = game.assets['../assets/mallorySoftSoap.png'];
+  //Randomly chooses one of the 4 available characters and adds it as the game avatar
+  var randomNumber = Math.random() * 100 + 1;
+  if (randomNumber <= 25) {
+    game.avatar = new Sprite(90,79);
+    game.avatar.image = game.assets['../assets/WumpusBlurple.png'];
+  } else if (randomNumber <= 50) {
+    game.avatar = new Sprite(90,79);
+    game.avatar.image = game.assets['../assets/WumpusGreen.png'];
+  } else if (randomNumber <= 75) {
+    game.avatar = new Sprite(90,79);
+    game.avatar.image = game.assets['../assets/WumpusPurple.png'];
   } else {
-    game.avatar = new Sprite(87,55);
-    game.avatar.image = game.assets['../assets/wumpusVanilla.png'];
+    game.avatar = new Sprite(90,79);
+    game.avatar.image = game.assets['../assets/WumpusRainbow.png'];
   }
 
   game.avatar.x = 100;
@@ -276,7 +264,6 @@ function openmenu() {
 	game.rootScene.removeChild(game.avatar);
 	game.rootScene.removeChild(game.gameover);
 	game.rootScene.removeChild(scoreBoard);
-	playingTrumpus = false;
 	gameEnded = false;
 	clearobstacles()
 
@@ -399,12 +386,7 @@ function game_touched() {
 	game.avatar.ySpeed = -game.flap_strength;
 //	flapAnimation()
       if(gameEnded == false) {
-
-        if (playingTrumpus === true) {
-          flapSound = new Audio('../sounds/china.mp3');
-        } else {
-          flapSound = new Audio('../sounds/flap.mp3');
-        }
+        flapSound = new Audio('../sounds/flap.mp3');
         flapSound.volume = 0.5;
         flapSound.play();
       }
@@ -527,11 +509,7 @@ function gameover(){
 
 	game.rootScene.addChild(game.menubutton);
 
-    if (playingTrumpus === true) {
-      var deathSound = new Audio('../sounds/wrong.mp3')
-    } else {
-      var deathSound = new Audio('../sounds/death.mp3');
-    }
+    var deathSound = new Audio('../sounds/death.mp3');
     deathSound.volume = 0.5;
     deathSound.play();
 
