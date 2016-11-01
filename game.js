@@ -25,14 +25,28 @@ game.obstacle_frequency = 50;
 // binding
 game.keybind(32, 'up');
 
-//music
-var menuMusic = new Audio('../sounds/wumpus.mp3');
+//MUSIC
+//Main Menu Music
+var menuMusic = new Audio('../sounds/menu-music.mp3');
 menuMusic.loop = true;
 menuMusic.volume = 0.4;
 
-var ingameMusic = new Audio('../sounds/FlappilyWumped.mp3');
+//In Game Music
+var ingameMusic = new Audio('../sounds/in-game-music.mp3');
 ingameMusic.loop = true;
 ingameMusic.volume = 0.6;
+
+//Score Sound
+var scoreSound = new Audio('../sounds/add-score.mp3');
+scoreSound.volume = 0.25;
+
+//Death Sound
+var deathSound = new Audio('../sounds/death.mp3');
+deathSound.volume = 0.5;
+
+//Game Over Sound
+var gameOverSound = new Audio('../sounds/game-over.mp3');
+gameOverSound.volume = 0.3;
 
 var obstacles = new Group();
 
@@ -386,6 +400,7 @@ function game_touched() {
 	game.avatar.ySpeed = -game.flap_strength;
 //	flapAnimation()
       if(gameEnded == false) {
+      	//Flap sound not added at the top as it dosen't play on every flap
         flapSound = new Audio('../sounds/flap.mp3');
         flapSound.volume = 0.5;
         flapSound.play();
@@ -448,6 +463,10 @@ game.onenterframe = function(){
 
         //increment score by 1
         scoreBoard.text++;
+
+        //plays a sound when score goes up
+        
+    	scoreSound.play();
       }
     }
 
@@ -509,12 +528,8 @@ function gameover(){
 
 	game.rootScene.addChild(game.menubutton);
 
-    var deathSound = new Audio('../sounds/death.mp3');
-    deathSound.volume = 0.5;
+    //Play Death and Game Over Sounds
     deathSound.play();
-
-    var gameOverSound = new Audio('../sounds/game-over.mp3');
-    gameOverSound.volume = 0.3;
     gameOverSound.play();
 
   // show gameover graphic
