@@ -81,7 +81,7 @@ footer {
     padding-top: 10px;
     width: 100vw;
     height: 130px;
-    background-color: #23272A;
+    background-color: #1C1728;
     border-top: 2px #6e7173 dashed;
 }
 
@@ -106,4 +106,10 @@ footer {
 
 .footer__inner a img {
     margin-top: 15px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.footer__inner a img:hover {
+    opacity: 1;
 }
